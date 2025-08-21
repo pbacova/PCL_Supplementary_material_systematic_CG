@@ -1,0 +1,106 @@
+GROMACS:    gmx grompp, VERSION 5.0.1
+
+GROMACS is written by:
+Emile Apol         Rossen Apostolov   Herman J.C. Berendsen Par Bjelkmar       
+Aldert van Buuren  Rudi van Drunen    Anton Feenstra     Sebastian Fritsch  
+Gerrit Groenhof    Christoph Junghans Peter Kasson       Carsten Kutzner    
+Per Larsson        Justin A. Lemkul   Magnus Lundborg    Pieter Meulenhoff  
+Erik Marklund      Teemu Murtola      Szilard Pall       Sander Pronk       
+Roland Schulz      Alexey Shvetsov    Michael Shirts     Alfons Sijbers     
+Peter Tieleman     Christian Wennberg Maarten Wolf       
+and the project leaders:
+Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2014, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, VERSION 5.0.1
+Executable:   /opt/gromacs-5.0.1-no-openmpi/bin/gmx
+Library dir:  /opt/gromacs-5.0.1-no-openmpi/share/gromacs/top
+Command line:
+  grompp -v -f grompp.mdp -p topol.top -c solvated.gro -o run.tpr
+
+
+NOTE 1 [file grompp.mdp, line 43]:
+  grompp.mdp did not specify a value for the .mdp option "cutoff-scheme".
+  Probably it was first intended for use with GROMACS before 4.6. In 4.6,
+  the Verlet scheme was introduced, but the group scheme was still the
+  default. The default is now the Verlet scheme, so you will observe
+  different behaviour.
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'cpp'
+
+Back Off! I just backed up mdout.mdp to ./#mdout.mdp.1#
+checking input for internal consistency...
+
+NOTE 2 [file grompp.mdp]:
+  nstcomm < nstcalcenergy defeats the purpose of nstcalcenergy, setting
+  nstcomm to nstcalcenergy
+
+Setting the LD random seed to 664620938
+Generated 136 of the 136 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 136 of the 136 1-4 parameter combinations
+
+-------------------------------------------------------
+Program grompp, VERSION 5.0.1
+Source code file: /root/soft/gromacs-5.0.1/src/gromacs/gmxpreprocess/toppush.c, line: 1351
+
+Fatal error:
+Atomtype opls_116 not found
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+
+GROMACS:    gmx mdrun, VERSION 5.0.1
+
+GROMACS is written by:
+Emile Apol         Rossen Apostolov   Herman J.C. Berendsen Par Bjelkmar       
+Aldert van Buuren  Rudi van Drunen    Anton Feenstra     Sebastian Fritsch  
+Gerrit Groenhof    Christoph Junghans Peter Kasson       Carsten Kutzner    
+Per Larsson        Justin A. Lemkul   Magnus Lundborg    Pieter Meulenhoff  
+Erik Marklund      Teemu Murtola      Szilard Pall       Sander Pronk       
+Roland Schulz      Alexey Shvetsov    Michael Shirts     Alfons Sijbers     
+Peter Tieleman     Christian Wennberg Maarten Wolf       
+and the project leaders:
+Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2014, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, VERSION 5.0.1
+Executable:   /opt/gromacs-5.0.1-no-openmpi/bin/gmx
+Library dir:  /opt/gromacs-5.0.1-no-openmpi/share/gromacs/top
+Command line:
+  mdrun -nt 12 -s run.tpr
+
+
+Back Off! I just backed up md.log to ./#md.log.1#
+
+-------------------------------------------------------
+Program mdrun, VERSION 5.0.1
+Source code file: /root/soft/gromacs-5.0.1/src/gromacs/fileio/gmxfio.c, line: 513
+
+Can not open file:
+run.tpr
+For more information and tips for troubleshooting, please check the GROMACS
+website at http://www.gromacs.org/Documentation/Errors
+-------------------------------------------------------
+
