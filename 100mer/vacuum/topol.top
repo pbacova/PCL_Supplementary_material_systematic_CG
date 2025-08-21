@@ -1,0 +1,13 @@
+; Include forcefield parameters
+#include "pcl_ff_final.itp"
+
+; Include chain topologies
+#include "100PCL_pairs.itp"
+
+[ system ]
+; Name
+PCL 100mer
+
+[ molecules ]
+; Compound        #mols
+100PCL              1

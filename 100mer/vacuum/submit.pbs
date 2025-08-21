@@ -1,0 +1,9 @@
+#!/bin/bash -l
+#PBS -l walltime=9000:00:00,nodes=1:ppn=1
+#PBS -m abe
+#PBS -N 100PCL
+
+cd /data/petra/PCL/100mer/vacuum
+source /opt/gromacs-5.0.1-no-openmpi/bin/GMXRC
+#grompp -v -f grompp.mdp -p topol.top -c initial.gro -o run.tpr 
+mdrun -nt 1 -s run.tpr -cpi state.cpt
