@@ -1,0 +1,3527 @@
+Log file opened on Fri Apr 26 17:19:57 2024
+Host: node13  pid: 23638  rank ID: 0  number of ranks:  1
+GROMACS:    gmx mdrun, VERSION 5.0.1
+
+GROMACS is written by:
+Emile Apol         Rossen Apostolov   Herman J.C. Berendsen Par Bjelkmar       
+Aldert van Buuren  Rudi van Drunen    Anton Feenstra     Sebastian Fritsch  
+Gerrit Groenhof    Christoph Junghans Peter Kasson       Carsten Kutzner    
+Per Larsson        Justin A. Lemkul   Magnus Lundborg    Pieter Meulenhoff  
+Erik Marklund      Teemu Murtola      Szilard Pall       Sander Pronk       
+Roland Schulz      Alexey Shvetsov    Michael Shirts     Alfons Sijbers     
+Peter Tieleman     Christian Wennberg Maarten Wolf       
+and the project leaders:
+Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2014, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, VERSION 5.0.1
+Executable:   /opt/gromacs-5.0.1-no-openmpi/bin/gmx
+Library dir:  /opt/gromacs-5.0.1-no-openmpi/share/gromacs/top
+Command line:
+  mdrun -nt 12 -s run.tpr
+
+Gromacs version:    VERSION 5.0.1
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     enabled
+GPU support:        disabled
+invsqrt routine:    gmx_software_invsqrt(x)
+SIMD instructions:  SSE4.1
+FFT library:        fftw-3.3.3-sse2
+RDTSCP usage:       enabled
+C++11 compilation:  enabled
+TNG support:        enabled
+Tracing support:    disabled
+Built on:           Fri Mar 27 20:21:17 EET 2015
+Built by:           root@daywalker.acmac.uoc.gr [CMAKE]
+Build OS/arch:      Linux 3.10.0-123.20.1.el7.x86_64 x86_64
+Build CPU vendor:   GenuineIntel
+Build CPU brand:    Intel(R) Xeon(R) CPU           E5606  @ 2.13GHz
+Build CPU family:   6   Model: 44   Stepping: 2
+Build CPU features: aes apic clfsh cmov cx8 cx16 htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdtscp sse2 sse3 sse4.1 sse4.2 ssse3
+C compiler:         /opt/openmpi-1.8.4/bin/mpicc GNU 4.8.2
+C compiler flags:    -msse4.1   -Wno-maybe-uninitialized -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds  -O3 -DNDEBUG
+C++ compiler:       /opt/openmpi-1.8.4/bin/mpic++ GNU 4.8.2
+C++ compiler flags:  -msse4.1   -std=c++0x -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds  -O3 -DNDEBUG
+Boost version:      1.55.0 (internal)
+
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = sd
+   tinit                          = 0
+   dt                             = 0.001
+   nsteps                         = 100000000
+   init-step                      = 0
+   simulation-part                = 1
+   comm-mode                      = Angular
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = 399
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 100000
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 500000
+   nstcalcenergy                  = 100
+   nstenergy                      = 500000
+   nstxout-compressed             = 0
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Group
+   nstlist                        = 1
+   ns-type                        = Grid
+   pbc                            = no
+   periodic-molecules             = FALSE
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 2
+   rlistlong                      = 2
+   nstcalclr                      = 0
+   coulombtype                    = Cut-off
+   coulomb-modifier               = None
+   rcoulomb-switch                = 0
+   rcoulomb                       = 2
+   epsilon-r                      = 1
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = None
+   rvdw-switch                    = 0
+   rvdw                           = 2
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 0
+   fourier-ny                     = 0
+   fourier-nz                     = 0
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   implicit-solvent               = No
+   gb-algorithm                   = Still
+   nstgbradii                     = 1
+   rgbradii                       = 1
+   gb-epsilon-solvent             = 80
+   gb-saltconc                    = 0
+   gb-obc-alpha                   = 1
+   gb-obc-beta                    = 0.8
+   gb-obc-gamma                   = 4.85
+   gb-dielectric-offset           = 0.009
+   sa-algorithm                   = Ace-approximation
+   sa-surface-tension             = 2.05016
+   tcoupl                         = No
+   nsttcouple                     = -1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = FALSE
+   pcoupl                         = No
+   pcoupltype                     = Isotropic
+   nstpcouple                     = -1
+   tau-p                          = 1
+   compressibility (3x3):
+      compressibility[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   ref-p (3x3):
+      ref-p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = FALSE
+   QMconstraints                  = 0
+   QMMMscheme                     = 0
+   MMChargeScaleFactor            = 1
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = FALSE
+   Shake-SOR                      = FALSE
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = no
+   rotation                       = FALSE
+   interactiveMD                  = FALSE
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = FALSE
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = FALSE
+   E-x:
+      n = 0
+   E-xt:
+      n = 0
+   E-y:
+      n = 0
+   E-yt:
+      n = 0
+   E-z:
+      n = 0
+   E-zt:
+      n = 0
+   swapcoords                     = no
+   adress                         = FALSE
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+grpopts:
+   nrdf:        1081
+   ref-t:         300
+   tau-t:        0.01
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+Initializing Domain Decomposition on 6 ranks
+Dynamic load balancing: auto
+Will sort the charge groups at every domain (re)decomposition
+Initial maximum inter charge-group distances:
+    two-body bonded interactions: 1.008 nm, LJ-14, atoms 515 524
+  multi-body bonded interactions: 1.008 nm, Angle, atoms 518 524
+Minimum cell size due to bonded interactions: 1.109 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 0.764 nm
+Estimated maximum distance required for P-LINCS: 0.764 nm
+Scaling the initial minimum size with 1/0.8 (option -dds) = 1.25
+Optimizing the DD grid for 6 cells with a minimum initial size of 1.386 nm
+The maximum allowed number of cells is: X 15 Y 6 Z 6
+Domain decomposition grid 6 x 1 x 1, separate PME ranks 0
+Domain decomposition rank 0, coordinates 0 0 0
+
+Using 6 MPI threads
+
+Detecting CPU SIMD instructions.
+Present hardware specification:
+Vendor: GenuineIntel
+Brand:  Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+Family:  6  Model: 63  Stepping:  2
+Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+SIMD instructions most likely to fit this hardware: AVX2_256
+SIMD instructions selected at GROMACS compile time: SSE4.1
+
+
+Binary not matching hardware - you might be losing performance.
+SIMD instructions most likely to fit this hardware: AVX2_256
+SIMD instructions selected at GROMACS compile time: SSE4.1
+
+
+NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
+removed in a future release when 'verlet' supports all interaction forms.
+
+Table routines are used for coulomb: FALSE
+Table routines are used for vdw:     FALSE
+Cut-off's:   NS: 2   Coulomb: 2   LJ: 2
+System total charge: -0.000
+Generated table with 1500 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1500 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1500 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+Potential shift: LJ r^-12: 0.000e+00 r^-6: 0.000e+00, Coulomb -0e+00
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin thread to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 542
+There are inter charge-group constraints,
+will communicate selected coordinates each lincs iteration
+
+Linking all bonded interactions to atoms
+
+The initial number of communication pulses is: X 1
+The initial domain decomposition cell size is: X 3.51 nm
+
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions           2.000 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)   2.000 nm
+          multi-body bonded interactions  (-rdd)   2.000 nm
+  atoms separated by up to 5 constraints  (-rcon)  3.513 nm
+
+When dynamic load balancing gets turned on, these settings will change to:
+The maximum number of communication pulses is: X 1
+The minimum size for domain decomposition cells is 2.000 nm
+The requested allowed shrink of DD cells (option -dds) is: 0.80
+The allowed shrink of domain decomposition cells is: X 0.57
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions           2.000 nm
+            two-body bonded interactions  (-rdd)   2.000 nm
+          multi-body bonded interactions  (-rdd)   2.000 nm
+  atoms separated by up to 5 constraints  (-rcon)  2.000 nm
+
+
+Making 1D domain decomposition grid 6 x 1 x 1, home cell index 0 0 0
+
+Center of mass motion removal mode is Angular
+We have the following groups for center of mass motion removal:
+  0:  rest
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+N. Goga and A. J. Rzepiela and A. H. de Vries and S. J. Marrink and H. J. C.
+Berendsen
+Efficient Algorithms for Langevin and DPD Dynamics
+J. Chem. Theory Comput. 8 (2012) pp. 3637--3649
+-------- -------- --- Thank You --- -------- --------
+
+There are: 543 Atoms
+Charge group distribution at step 0: 5 5 6 5 5 5
+Grid: 5 x 5 x 5 cells
+
+Constraining the starting coordinates (step 0)
+
+Constraining the coordinates at t0-dt (step 0)
+RMS relative constraint deviation after constraining: 2.72e-05
+Initial temperature: 299.128 K
+
+Started mdrun on rank 0 Fri Apr 26 17:19:57 2024
+           Step           Time         Lambda
+              0        0.00000        0.00000
+
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.49108e+03    3.36843e+01    8.16874e+02    1.14709e+02   -1.16962e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.10142e+02    7.75117e+02    9.85170e+03    1.38225e+03    1.12340e+04
+    Temperature Pressure (bar)   Constr. rmsd
+    3.07577e+02    0.00000e+00    8.80987e-06
+
+DD  step 0 load imb.: force 49.2%
+
+At step 1 the performance loss due to force load imbalance is 8.3 %
+
+NOTE: Turning on dynamic load balancing
+
+DD  step 499999  vol min/aver 0.882  load imb.: force 10.8%
+
+           Step           Time         Lambda
+         500000      500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17146e+03    3.26418e+01    9.34560e+01    3.10116e+02   -1.31870e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.18072e+02    5.92513e+02    7.63419e+02    1.33291e+03    2.09633e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96599e+02    0.00000e+00    6.73179e-06
+
+DD  step 999999  vol min/aver 0.931  load imb.: force 18.1%
+
+           Step           Time         Lambda
+        1000000     1000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14720e+03    3.42758e+01    5.51754e+01    2.89979e+02   -1.32385e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.62425e+02    5.67085e+02    6.07440e+02    1.34984e+03    1.95728e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.00366e+02    0.00000e+00    6.81872e-06
+
+DD  step 1499999  vol min/aver 0.827  load imb.: force 18.4%
+
+           Step           Time         Lambda
+        1500000     1500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18013e+03    3.29722e+01    3.13730e+01    3.08843e+02   -1.35838e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.44540e+02    5.58424e+02    6.08821e+02    1.37483e+03    1.98365e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05925e+02    0.00000e+00    6.63817e-06
+
+DD  step 1999999  vol min/aver 0.906  load imb.: force 11.8%
+
+           Step           Time         Lambda
+        2000000     2000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13845e+03    5.87114e+01   -4.01589e+01    3.14427e+02   -1.41167e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.66691e+02    6.38415e+02    5.31479e+02    1.33466e+03    1.86614e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96987e+02    0.00000e+00    6.43832e-06
+
+DD  step 2499999  vol min/aver 0.971  load imb.: force 17.7%
+
+           Step           Time         Lambda
+        2500000     2500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08122e+03    2.74489e+01   -4.65467e+01    3.14589e+02   -1.40828e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.68396e+02    5.99847e+02    3.99885e+02    1.39786e+03    1.79774e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11050e+02    0.00000e+00    6.57858e-06
+
+DD  step 2999999  vol min/aver 0.913  load imb.: force 18.3%
+
+           Step           Time         Lambda
+        3000000     3000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06481e+03    3.46244e+01   -1.99034e+01    3.08713e+02   -1.37237e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.69704e+02    5.90409e+02    4.36576e+02    1.37535e+03    1.81192e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06041e+02    0.00000e+00    6.52961e-06
+
+Writing checkpoint, step 3158883 at Fri Apr 26 17:34:57 2024
+
+
+DD  step 3499999  vol min/aver 0.880  load imb.: force 16.7%
+
+           Step           Time         Lambda
+        3500000     3500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12207e+03    3.47376e+01    3.51233e+00    3.07493e+02   -1.38934e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.73680e+02    5.75657e+02    4.80449e+02    1.39823e+03    1.87868e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11132e+02    0.00000e+00    6.60191e-06
+
+DD  step 3999999  vol min/aver 0.716  load imb.: force 12.7%
+
+           Step           Time         Lambda
+        4000000     4000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09499e+03    3.55050e+01   -2.16379e+00    3.28412e+02   -1.40464e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.22775e+02    6.37917e+02    4.67242e+02    1.48090e+03    1.94815e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.29530e+02    0.00000e+00    6.24898e-06
+
+DD  step 4499999  vol min/aver 0.784  load imb.: force 18.3%
+
+           Step           Time         Lambda
+        4500000     4500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05189e+03    3.51184e+01   -5.45274e+01    3.23215e+02   -1.39783e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.79302e+02    6.00025e+02    3.78593e+02    1.29856e+03    1.67715e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88954e+02    0.00000e+00    6.41290e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 4999999  vol min/aver 0.736! load imb.: force 11.4%
+
+           Step           Time         Lambda
+        5000000     5000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09961e+03    3.42723e+01    5.01185e+01    3.38728e+02   -1.36583e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -1.85532e+02    5.60130e+02    5.31502e+02    1.46462e+03    1.99612e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.25907e+02    0.00000e+00    6.55760e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 5499999  vol min/aver 0.747! load imb.: force 24.2%
+
+           Step           Time         Lambda
+        5500000     5500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19029e+03    3.23590e+01   -4.42778e+00    3.02935e+02   -1.36153e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.57225e+02    5.62367e+02    4.64774e+02    1.34029e+03    1.80506e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98240e+02    0.00000e+00    6.69129e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 5999999  vol min/aver 0.771! load imb.: force 30.2%
+
+           Step           Time         Lambda
+        6000000     6000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09414e+03    3.73539e+01    4.87057e+01    2.95448e+02   -1.37190e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.33306e+02    5.61445e+02    4.31881e+02    1.29780e+03    1.72968e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88785e+02    0.00000e+00    6.06829e-06
+
+Writing checkpoint, step 6154199 at Fri Apr 26 17:49:57 2024
+
+
+DD  step 6499999  vol min/aver 0.771  load imb.: force 22.5%
+
+           Step           Time         Lambda
+        6500000     6500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07999e+03    3.43656e+01   -3.59319e+01    2.80931e+02   -1.37818e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.58756e+02    6.04621e+02    3.27038e+02    1.33378e+03    1.66082e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96792e+02    0.00000e+00    6.17449e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 6999999  vol min/aver 0.785! load imb.: force 22.9%
+
+           Step           Time         Lambda
+        7000000     7000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10737e+03    2.79810e+01   -2.99242e+01    3.17586e+02   -1.36415e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.61051e+02    5.28871e+02    3.26685e+02    1.37642e+03    1.70310e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06279e+02    0.00000e+00    6.26193e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 7499999  vol min/aver 0.789! load imb.: force 27.5%
+
+           Step           Time         Lambda
+        7500000     7500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16952e+03    4.80765e+01    4.11273e+01    3.25982e+02   -1.35475e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.61931e+02    5.34017e+02    5.02044e+02    1.33055e+03    1.83260e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96073e+02    0.00000e+00    6.05245e-06
+
+DD  step 7999999  vol min/aver 0.699  load imb.: force 31.7%
+
+           Step           Time         Lambda
+        8000000     8000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08581e+03    4.23956e+01    6.79844e+01    2.94983e+02   -1.36243e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.69151e+02    5.53559e+02    4.13149e+02    1.30431e+03    1.71746e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.90235e+02    0.00000e+00    6.12930e-06
+
+DD  step 8499999  vol min/aver 0.821  load imb.: force 31.1%
+
+           Step           Time         Lambda
+        8500000     8500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10707e+03    5.20387e+01   -3.33195e+01    3.13458e+02   -1.39798e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.86360e+02    6.18495e+02    3.73405e+02    1.43116e+03    1.80457e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.18462e+02    0.00000e+00    5.95280e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 8999999  vol min/aver 0.678! load imb.: force 53.2%
+
+           Step           Time         Lambda
+        9000000     9000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04119e+03    3.26666e+01   -1.30391e+00    3.13112e+02   -1.39798e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.81419e+02    6.10561e+02    3.16832e+02    1.34913e+03    1.66596e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.00206e+02    0.00000e+00    6.50089e-06
+
+Writing checkpoint, step 9010851 at Fri Apr 26 18:04:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 9499999  vol min/aver 0.710! load imb.: force 26.0%
+
+           Step           Time         Lambda
+        9500000     9500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11162e+03    2.91572e+01    4.05968e+01    3.21029e+02   -1.32244e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.69708e+02    5.02642e+02    4.12893e+02    1.34023e+03    1.75312e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98227e+02    0.00000e+00    6.30325e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 9999999  vol min/aver 0.680! load imb.: force 50.6%
+
+           Step           Time         Lambda
+       10000000    10000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16526e+03    2.78422e+01    4.15565e+01    2.96425e+02   -1.32602e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.00803e+02    4.99901e+02    4.04154e+02    1.35261e+03    1.75676e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.00981e+02    0.00000e+00    6.05474e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 10499999  vol min/aver 0.684! load imb.: force 52.9%
+
+           Step           Time         Lambda
+       10500000    10500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12384e+03    3.60515e+01   -1.81608e+01    2.95089e+02   -1.34647e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.57716e+02    5.42668e+02    3.75309e+02    1.37268e+03    1.74799e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05447e+02    0.00000e+00    6.23386e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 10999999  vol min/aver 0.640! load imb.: force 34.8%
+
+           Step           Time         Lambda
+       11000000    11000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15797e+03    2.90721e+01    2.63030e+01    3.07870e+02   -1.38252e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.68872e+02    5.95762e+02    4.65585e+02    1.34682e+03    1.81241e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.99694e+02    0.00000e+00    6.01930e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 11499999  vol min/aver 0.741! load imb.: force 26.9%
+
+           Step           Time         Lambda
+       11500000    11500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05688e+03    3.18195e+01   -3.01678e+01    3.08108e+02   -1.37605e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.92945e+02    5.77475e+02    2.75126e+02    1.33028e+03    1.60541e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96013e+02    0.00000e+00    6.20469e-06
+
+Writing checkpoint, step 11566531 at Fri Apr 26 18:19:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 11999999  vol min/aver 0.637! load imb.: force 57.0%
+
+           Step           Time         Lambda
+       12000000    12000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09116e+03    2.82068e+01    3.82826e+01    3.13137e+02   -1.33831e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -2.85838e+02    4.85418e+02    3.32048e+02    1.21446e+03    1.54651e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.70241e+02    0.00000e+00    6.39447e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 12499999  vol min/aver 0.697! load imb.: force 25.4%
+
+           Step           Time         Lambda
+       12500000    12500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18114e+03    5.16240e+01    1.53600e+00    3.04188e+02   -1.40227e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.48117e+02    5.96063e+02    3.84172e+02    1.27128e+03    1.65545e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.82884e+02    0.00000e+00    6.17840e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 12999999  vol min/aver 0.689! load imb.: force 75.8%
+
+           Step           Time         Lambda
+       13000000    13000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04606e+03    3.38136e+01   -1.74003e+01    3.23388e+02   -1.40450e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.25375e+02    5.87038e+02    2.43022e+02    1.36514e+03    1.60816e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03770e+02    0.00000e+00    6.37785e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 13499999  vol min/aver 0.797! load imb.: force 47.1%
+
+           Step           Time         Lambda
+       13500000    13500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11906e+03    1.95366e+01    3.82190e+01    2.91542e+02   -1.33446e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.69067e+02    4.95937e+02    2.60766e+02    1.44942e+03    1.71018e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.22523e+02    0.00000e+00    5.78710e-06
+
+Writing checkpoint, step 13910362 at Fri Apr 26 18:34:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 13999999  vol min/aver 0.801! load imb.: force 45.0%
+
+           Step           Time         Lambda
+       14000000    14000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08034e+03    4.06246e+01    5.26568e+00    3.14604e+02   -1.39845e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.40789e+02    5.88121e+02    2.89716e+02    1.37990e+03    1.66961e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.07054e+02    0.00000e+00    6.08670e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 14499999  vol min/aver 0.737! load imb.: force 88.2%
+
+           Step           Time         Lambda
+       14500000    14500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11502e+03    3.45079e+01    1.78289e+01    3.15691e+02   -1.38324e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.96110e+02    5.47372e+02    2.51073e+02    1.38437e+03    1.63545e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.08050e+02    0.00000e+00    5.92281e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 14999999  vol min/aver 0.766! load imb.: force 88.4%
+
+           Step           Time         Lambda
+       15000000    15000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10469e+03    3.46826e+01    4.41459e+01    3.26319e+02   -1.34512e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.46206e+02    4.49268e+02    2.67783e+02    1.33513e+03    1.60291e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.97092e+02    0.00000e+00    5.70103e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 15499999  vol min/aver 0.773! load imb.: force 89.9%
+
+           Step           Time         Lambda
+       15500000    15500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13411e+03    2.40689e+01    3.00689e+01    2.83147e+02   -1.35040e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.91772e+02    5.08854e+02    2.38079e+02    1.39022e+03    1.62830e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.09350e+02    0.00000e+00    6.30707e-06
+
+Writing checkpoint, step 15835746 at Fri Apr 26 18:49:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 15999999  vol min/aver 0.600! load imb.: force 160.5%
+
+           Step           Time         Lambda
+       16000000    16000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14299e+03    4.13156e+01    1.91962e+01    3.02175e+02   -1.35490e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.52369e+02    5.31807e+02    2.30213e+02    1.45740e+03    1.68762e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.24301e+02    0.00000e+00    5.99600e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 16499999  vol min/aver 0.651! load imb.: force 129.4%
+
+           Step           Time         Lambda
+       16500000    16500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09092e+03    2.20933e+01    5.52806e+00    2.96698e+02   -1.38710e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.32676e+02    5.96396e+02    1.91852e+02    1.40135e+03    1.59320e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11827e+02    0.00000e+00    6.22596e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 16999999  vol min/aver 0.659! load imb.: force 159.3%
+
+           Step           Time         Lambda
+       17000000    17000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.23130e+03    2.37922e+01   -3.81259e+00    2.89278e+02   -1.39657e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.16403e+02    5.91311e+02    3.18899e+02    1.27114e+03    1.59004e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.82853e+02    0.00000e+00    5.65369e-06
+
+Writing checkpoint, step 17385972 at Fri Apr 26 19:04:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 17499999  vol min/aver 0.598! load imb.: force 126.7%
+
+           Step           Time         Lambda
+       17500000    17500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08971e+03    1.33200e+01    1.59087e+01    2.90104e+02   -1.35939e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.21466e+02    5.54243e+02    1.82431e+02    1.40002e+03    1.58245e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11531e+02    0.00000e+00    6.07499e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 17999999  vol min/aver 0.471! load imb.: force 119.0%
+
+           Step           Time         Lambda
+       18000000    18000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09942e+03    3.33702e+01    3.13969e+01    3.42468e+02   -1.37570e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.79237e+02    5.41751e+02    2.93470e+02    1.46427e+03    1.75774e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.25829e+02    0.00000e+00    5.61721e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 18499999  vol min/aver 0.567! load imb.: force 134.9%
+
+           Step           Time         Lambda
+       18500000    18500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10549e+03    4.13098e+01    3.24133e+01    2.92845e+02   -1.34258e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.05490e+02    4.77975e+02    2.01957e+02    1.45684e+03    1.65880e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.24175e+02    0.00000e+00    5.68978e-06
+
+Writing checkpoint, step 18908781 at Fri Apr 26 19:19:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 18999999  vol min/aver 0.493! load imb.: force 150.9%
+
+           Step           Time         Lambda
+       19000000    19000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09662e+03    4.87033e+01    3.73654e+01    3.21351e+02   -1.33682e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.17097e+02    4.96856e+02    2.46977e+02    1.28332e+03    1.53029e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.85563e+02    0.00000e+00    5.92204e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 19499999  vol min/aver 0.429! load imb.: force 160.7%
+
+           Step           Time         Lambda
+       19500000    19500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10353e+03    4.04302e+01    5.71123e+01    2.95146e+02   -1.30539e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.30128e+02    4.26656e+02    1.87360e+02    1.30119e+03    1.48855e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.89540e+02    0.00000e+00    5.71951e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 19999999  vol min/aver 0.475! load imb.: force 126.0%
+
+           Step           Time         Lambda
+       20000000    20000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13821e+03    3.92816e+01    8.82948e+01    3.12380e+02   -1.30161e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.19169e+02    4.07696e+02    2.65075e+02    1.41373e+03    1.67881e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.14583e+02    0.00000e+00    5.80183e-06
+
+Writing checkpoint, step 20398082 at Fri Apr 26 19:34:57 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 20499999  vol min/aver 0.394! load imb.: force 143.4%
+
+           Step           Time         Lambda
+       20500000    20500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08795e+03    2.55385e+01    7.57478e+01    2.93080e+02   -1.36028e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -3.96530e+02    4.73463e+02    1.98970e+02    1.28277e+03    1.48174e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.85440e+02    0.00000e+00    5.68079e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 20999999  vol min/aver 0.199! load imb.: force 113.7%
+
+           Step           Time         Lambda
+       21000000    21000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11682e+03    2.49943e+01    7.99698e+01    2.98901e+02   -1.38054e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.42639e+02    5.45699e+02    2.43202e+02    1.32985e+03    1.57305e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.95918e+02    0.00000e+00    5.68084e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 21499999  vol min/aver 0.246! load imb.: force 132.1%
+
+           Step           Time         Lambda
+       21500000    21500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.25003e+03    3.99528e+01    2.15457e+01    2.90909e+02   -1.34081e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.57810e+02    4.98291e+02    3.02105e+02    1.40621e+03    1.70831e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.12908e+02    0.00000e+00    5.70253e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 21999999  vol min/aver 0.015! load imb.: force 127.7%
+
+           Step           Time         Lambda
+       22000000    22000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06241e+03    1.84568e+01    1.09218e+01    3.13135e+02   -1.37511e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.56996e+02    5.30341e+02    1.03158e+02    1.30174e+03    1.40489e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.89661e+02    0.00000e+00    5.56241e-06
+
+Writing checkpoint, step 22022613 at Fri Apr 26 19:49:57 2024
+
+
+
+
+-----------------------------------------------------------
+Restarting from checkpoint, appending to previous log file.
+
+Log file opened on Tue Apr 30 18:18:18 2024
+Host: node11  pid: 2863  rank ID: 0  number of ranks:  6
+GROMACS:      gmx mdrun, VERSION 5.0.1
+Executable:   /opt/gromacs-5.0.1-no-openmpi/bin/gmx
+Library dir:  /opt/gromacs-5.0.1-no-openmpi/share/gromacs/top
+Command line:
+  mdrun -nt 12 -s run.tpr -cpi state.cpt
+
+Gromacs version:    VERSION 5.0.1
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     enabled
+GPU support:        disabled
+invsqrt routine:    gmx_software_invsqrt(x)
+SIMD instructions:  SSE4.1
+FFT library:        fftw-3.3.3-sse2
+RDTSCP usage:       enabled
+C++11 compilation:  enabled
+TNG support:        enabled
+Tracing support:    disabled
+Built on:           Fri Mar 27 20:21:17 EET 2015
+Built by:           root@daywalker.acmac.uoc.gr [CMAKE]
+Build OS/arch:      Linux 3.10.0-123.20.1.el7.x86_64 x86_64
+Build CPU vendor:   GenuineIntel
+Build CPU brand:    Intel(R) Xeon(R) CPU           E5606  @ 2.13GHz
+Build CPU family:   6   Model: 44   Stepping: 2
+Build CPU features: aes apic clfsh cmov cx8 cx16 htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdtscp sse2 sse3 sse4.1 sse4.2 ssse3
+C compiler:         /opt/openmpi-1.8.4/bin/mpicc GNU 4.8.2
+C compiler flags:    -msse4.1   -Wno-maybe-uninitialized -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds  -O3 -DNDEBUG
+C++ compiler:       /opt/openmpi-1.8.4/bin/mpic++ GNU 4.8.2
+C++ compiler flags:  -msse4.1   -std=c++0x -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds  -O3 -DNDEBUG
+Boost version:      1.55.0 (internal)
+
+
+
+Initializing Domain Decomposition on 6 ranks
+Dynamic load balancing: auto
+Will sort the charge groups at every domain (re)decomposition
+Initial maximum inter charge-group distances:
+    two-body bonded interactions: 0.750 nm, LJ-14, atoms 296 305
+  multi-body bonded interactions: 0.750 nm, Angle, atoms 303 305
+Minimum cell size due to bonded interactions: 0.825 nm
+Maximum distance for 5 constraints, at 120 deg. angles, all-trans: 0.764 nm
+Estimated maximum distance required for P-LINCS: 0.764 nm
+Domain decomposition grid 6 x 1 x 1, separate PME ranks 0
+Domain decomposition rank 0, coordinates 0 0 0
+
+Using 6 MPI threads
+
+Detecting CPU SIMD instructions.
+Present hardware specification:
+Vendor: GenuineIntel
+Brand:  Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+Family:  6  Model: 63  Stepping:  2
+Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+SIMD instructions most likely to fit this hardware: AVX2_256
+SIMD instructions selected at GROMACS compile time: SSE4.1
+
+
+Binary not matching hardware - you might be losing performance.
+SIMD instructions most likely to fit this hardware: AVX2_256
+SIMD instructions selected at GROMACS compile time: SSE4.1
+
+
+NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
+removed in a future release when 'verlet' supports all interaction forms.
+
+Table routines are used for coulomb: FALSE
+Table routines are used for vdw:     FALSE
+Cut-off's:   NS: 2   Coulomb: 2   LJ: 2
+System total charge: -0.000
+Generated table with 1500 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1500 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1500 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+Potential shift: LJ r^-12: 0.000e+00 r^-6: 0.000e+00, Coulomb -0e+00
+
+NOTE: The number of threads is not equal to the number of (logical) cores
+      and the -pin option is set to auto: will not pin thread to cores.
+      This can lead to significant performance degradation.
+      Consider using -pin on (and -pinoffset in case you run multiple jobs).
+
+
+Initializing Parallel LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 542
+There are inter charge-group constraints,
+will communicate selected coordinates each lincs iteration
+
+Linking all bonded interactions to atoms
+
+The initial number of communication pulses is: X 2
+The initial domain decomposition cell size is: X 1.46 nm
+
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions           2.000 nm
+(the following are initial values, they could change due to box deformation)
+            two-body bonded interactions  (-rdd)   2.000 nm
+          multi-body bonded interactions  (-rdd)   1.462 nm
+  atoms separated by up to 5 constraints  (-rcon)  1.462 nm
+
+When dynamic load balancing gets turned on, these settings will change to:
+The maximum number of communication pulses is: X 2
+The minimum size for domain decomposition cells is 1.106 nm
+The requested allowed shrink of DD cells (option -dds) is: 0.80
+The allowed shrink of domain decomposition cells is: X 0.76
+The maximum allowed distance for charge groups involved in interactions is:
+                 non-bonded interactions           2.000 nm
+            two-body bonded interactions  (-rdd)   2.000 nm
+          multi-body bonded interactions  (-rdd)   1.106 nm
+  atoms separated by up to 5 constraints  (-rcon)  1.106 nm
+
+
+Making 1D domain decomposition grid 6 x 1 x 1, home cell index 0 0 0
+
+Center of mass motion removal mode is Angular
+We have the following groups for center of mass motion removal:
+  0:  rest
+There are: 543 Atoms
+Charge group distribution at step 22022613: 3 10 3 3 5 7
+Grid: 4 x 2 x 2 cells
+Initial temperature: 592.574 K
+
+Started mdrun on rank 0 Tue Apr 30 18:18:18 2024
+           Step           Time         Lambda
+       22022613    22022.61300        0.00000
+
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10084e+03    3.19544e+01    7.23044e+01    3.01180e+02   -1.32314e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.81995e+02    4.85947e+02    1.87087e+02    1.36590e+03    1.55299e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03939e+02    0.00000e+00    0.00000e+00
+
+DD  step 22022613 load imb.: force 51.9%
+
+At step 22022614 the performance loss due to force load imbalance is 11.7 %
+
+NOTE: Turning on dynamic load balancing
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 22499999  vol min/aver 0.751! load imb.: force 64.2%
+
+           Step           Time         Lambda
+       22500000    22500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14132e+03    4.88315e+01    8.09875e+00    2.74661e+02   -1.35726e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.74187e+02    5.26838e+02    1.68296e+02    1.29606e+03    1.46435e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88398e+02    0.00000e+00    5.88000e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 22999999  vol min/aver 0.811! load imb.: force 40.3%
+
+           Step           Time         Lambda
+       23000000    23000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10332e+03    3.09404e+01    3.62027e+01    2.95695e+02   -1.33883e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.29727e+02    4.94790e+02    1.92385e+02    1.43291e+03    1.62530e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.18851e+02    0.00000e+00    5.52360e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 23499999  vol min/aver 0.903! load imb.: force 81.5%
+
+           Step           Time         Lambda
+       23500000    23500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16692e+03    3.15689e+01    4.68512e+01    2.93951e+02   -1.35424e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.05021e+02    4.70041e+02    1.50068e+02    1.36833e+03    1.51839e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04479e+02    0.00000e+00    5.60840e-06
+
+Writing checkpoint, step 23919499 at Tue Apr 30 18:33:18 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 23999999  vol min/aver 0.783! load imb.: force 114.9%
+
+           Step           Time         Lambda
+       24000000    24000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16055e+03    4.46752e+01    1.04273e+02    3.20935e+02   -1.32898e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.69074e+02    4.31550e+02    2.63929e+02    1.38746e+03    1.65139e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.08736e+02    0.00000e+00    5.84127e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 24499999  vol min/aver 0.751! load imb.: force 94.7%
+
+           Step           Time         Lambda
+       24500000    24500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05501e+03    3.29793e+01    3.30642e+01    2.98496e+02   -1.30656e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.93062e+02    4.13228e+02    3.31517e+01    1.29638e+03    1.32953e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88470e+02    0.00000e+00    5.59471e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 24999999  vol min/aver 0.753! load imb.: force 127.4%
+
+           Step           Time         Lambda
+       25000000    25000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12314e+03    3.90792e+01    2.98023e+00    2.96326e+02   -1.34106e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.34606e+02    4.87241e+02    7.30959e+01    1.37964e+03    1.45273e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06996e+02    0.00000e+00    5.61624e-06
+
+Writing checkpoint, step 25418012 at Tue Apr 30 18:48:18 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 25499999  vol min/aver 0.694! load imb.: force 124.7%
+
+           Step           Time         Lambda
+       25500000    25500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05999e+03    3.75606e+01    9.98417e+00    3.31440e+02   -1.34533e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -4.95501e+02    4.49339e+02    4.74895e+01    1.42012e+03    1.46761e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.16004e+02    0.00000e+00    5.52789e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 25999999  vol min/aver 0.648! load imb.: force 136.0%
+
+           Step           Time         Lambda
+       26000000    26000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06193e+03    4.28899e+01    1.21325e+02    2.91689e+02   -1.30232e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.24243e+02    4.06899e+02    9.81651e+01    1.36048e+03    1.45864e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.02733e+02    0.00000e+00    5.86871e-06
+
+Grid: 8 x 2 x 2 cells
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 26499999  vol min/aver 0.340! load imb.: force 158.5%
+
+           Step           Time         Lambda
+       26500000    26500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.22650e+03    3.67114e+01    3.15571e+01    3.13320e+02   -1.35790e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.12336e+02    4.53133e+02    1.90985e+02    1.24169e+03    1.43267e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.76300e+02    0.00000e+00    5.86637e-06
+
+Writing checkpoint, step 26793929 at Tue Apr 30 19:03:18 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 26999999  vol min/aver 0.461! load imb.: force 154.4%
+
+           Step           Time         Lambda
+       27000000    27000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14013e+03    3.60468e+01   -5.45926e+01    2.96816e+02   -1.39996e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.36996e+02    5.31586e+02    1.30325e+01    1.42755e+03    1.44058e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.17657e+02    0.00000e+00    5.66193e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 27499999  vol min/aver 0.449! load imb.: force 158.3%
+
+           Step           Time         Lambda
+       27500000    27500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14856e+03    3.57845e+01   -5.62032e+00    3.22619e+02   -1.35644e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.81326e+02    4.52770e+02    1.63454e+01    1.35306e+03    1.36940e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01082e+02    0.00000e+00    5.76539e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 27999999  vol min/aver 0.189! load imb.: force 120.4%
+
+           Step           Time         Lambda
+       28000000    28000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05622e+03    2.79364e+01    1.77524e+01    2.96315e+02   -1.35445e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.03179e+02    4.71483e+02   -8.79258e+01    1.31428e+03    1.22636e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.92453e+02    0.00000e+00    5.67274e-06
+
+Writing checkpoint, step 28131257 at Tue Apr 30 19:18:18 2024
+
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 28499999  vol min/aver 0.482! load imb.: force 134.6%
+
+           Step           Time         Lambda
+       28500000    28500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09985e+03    4.80337e+01    8.56882e+00    3.06557e+02   -1.32635e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.84186e+02    4.79907e+02    3.23809e+01    1.39784e+03    1.43022e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11046e+02    0.00000e+00    5.56906e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 28999999  vol min/aver 0.312! load imb.: force 112.3%
+
+           Step           Time         Lambda
+       29000000    29000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08453e+03    3.47736e+01   -1.34375e+01    3.09312e+02   -1.40096e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.79720e+02    5.73093e+02    7.59192e+00    1.44746e+03    1.45505e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.22088e+02    0.00000e+00    5.71621e-06
+
+DD  load balancing is limited by minimum cell size in dimension X
+DD  step 29499999  vol min/aver 0.004! load imb.: force 116.4%
+
+           Step           Time         Lambda
+       29500000    29500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.21234e+03    3.27391e+01    2.49612e+01    2.95619e+02   -1.38102e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.92905e+02    5.07592e+02    9.93290e+01    1.31855e+03    1.41788e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.93402e+02    0.00000e+00    5.57787e-06
+
+Writing checkpoint, step 29514141 at Tue Apr 30 19:33:18 2024
+
+
+
+
+-----------------------------------------------------------
+Restarting from checkpoint, appending to previous log file.
+
+Log file opened on Tue Apr 30 19:44:56 2024
+Host: node11  pid: 4120  rank ID: 0  number of ranks:  1
+GROMACS:      gmx mdrun, VERSION 5.0.1
+Executable:   /opt/gromacs-5.0.1-no-openmpi/bin/gmx
+Library dir:  /opt/gromacs-5.0.1-no-openmpi/share/gromacs/top
+Command line:
+  mdrun -nt 1 -s run.tpr -cpi state.cpt
+
+Gromacs version:    VERSION 5.0.1
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     enabled
+GPU support:        disabled
+invsqrt routine:    gmx_software_invsqrt(x)
+SIMD instructions:  SSE4.1
+FFT library:        fftw-3.3.3-sse2
+RDTSCP usage:       enabled
+C++11 compilation:  enabled
+TNG support:        enabled
+Tracing support:    disabled
+Built on:           Fri Mar 27 20:21:17 EET 2015
+Built by:           root@daywalker.acmac.uoc.gr [CMAKE]
+Build OS/arch:      Linux 3.10.0-123.20.1.el7.x86_64 x86_64
+Build CPU vendor:   GenuineIntel
+Build CPU brand:    Intel(R) Xeon(R) CPU           E5606  @ 2.13GHz
+Build CPU family:   6   Model: 44   Stepping: 2
+Build CPU features: aes apic clfsh cmov cx8 cx16 htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdtscp sse2 sse3 sse4.1 sse4.2 ssse3
+C compiler:         /opt/openmpi-1.8.4/bin/mpicc GNU 4.8.2
+C compiler flags:    -msse4.1   -Wno-maybe-uninitialized -Wextra -Wno-missing-field-initializers -Wno-sign-compare -Wpointer-arith -Wall -Wno-unused -Wunused-value -Wunused-parameter   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds  -O3 -DNDEBUG
+C++ compiler:       /opt/openmpi-1.8.4/bin/mpic++ GNU 4.8.2
+C++ compiler flags:  -msse4.1   -std=c++0x -Wextra -Wno-missing-field-initializers -Wpointer-arith -Wall -Wno-unused-function   -fomit-frame-pointer -funroll-all-loops -fexcess-precision=fast  -Wno-array-bounds  -O3 -DNDEBUG
+Boost version:      1.55.0 (internal)
+
+
+Using 1 MPI thread
+
+Detecting CPU SIMD instructions.
+Present hardware specification:
+Vendor: GenuineIntel
+Brand:  Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+Family:  6  Model: 63  Stepping:  2
+Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt lahf_lm mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+SIMD instructions most likely to fit this hardware: AVX2_256
+SIMD instructions selected at GROMACS compile time: SSE4.1
+
+
+Binary not matching hardware - you might be losing performance.
+SIMD instructions most likely to fit this hardware: AVX2_256
+SIMD instructions selected at GROMACS compile time: SSE4.1
+
+
+NOTE: This file uses the deprecated 'group' cutoff_scheme. This will be
+removed in a future release when 'verlet' supports all interaction forms.
+
+Table routines are used for coulomb: FALSE
+Table routines are used for vdw:     FALSE
+Cut-off's:   NS: 2   Coulomb: 2   LJ: 2
+System total charge: -0.000
+Generated table with 1500 data points for 1-4 COUL.
+Tabscale = 500 points/nm
+Generated table with 1500 data points for 1-4 LJ6.
+Tabscale = 500 points/nm
+Generated table with 1500 data points for 1-4 LJ12.
+Tabscale = 500 points/nm
+Potential shift: LJ r^-12: 0.000e+00 r^-6: 0.000e+00, Coulomb -0e+00
+
+Initializing LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and H. Bekker and H. J. C. Berendsen and J. G. E. M. Fraaije
+LINCS: A Linear Constraint Solver for molecular simulations
+J. Comp. Chem. 18 (1997) pp. 1463-1472
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 542
+Center of mass motion removal mode is Angular
+We have the following groups for center of mass motion removal:
+  0:  rest
+There are: 543 Atoms
+Initial temperature: 589.515 K
+
+Started mdrun on rank 0 Tue Apr 30 19:44:56 2024
+           Step           Time         Lambda
+       29514141    29514.14100        0.00000
+
+
+Grid: 3 x 2 x 2 cells
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14811e+03    3.21439e+01    1.18125e+01    2.86917e+02   -1.39288e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.79492e+02    5.55331e+02    6.19401e+01    1.32487e+03    1.38681e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.94809e+02    0.00000e+00    0.00000e+00
+
+           Step           Time         Lambda
+       30000000    30000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15654e+03    3.17356e+01   -1.15775e+01    3.01819e+02   -1.39772e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.35447e+02    5.47524e+02   -7.12518e+00    1.39682e+03    1.38970e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.10820e+02    0.00000e+00    5.67718e-06
+
+Writing checkpoint, step 30180718 at Tue Apr 30 19:59:56 2024
+
+
+           Step           Time         Lambda
+       30500000    30500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.32017e+03    3.90510e+01   -3.82082e+01    3.05605e+02   -1.37802e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.44707e+02    4.97676e+02    2.01558e+02    1.29445e+03    1.49601e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88041e+02    0.00000e+00    5.76468e-06
+
+Writing checkpoint, step 30823598 at Tue Apr 30 20:14:56 2024
+
+
+           Step           Time         Lambda
+       31000000    31000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06546e+03    2.33389e+01    6.58340e+01    3.28863e+02   -1.33947e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.02159e+02    4.16226e+02   -4.19003e+01    1.39766e+03    1.35576e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11006e+02    0.00000e+00    5.36408e-06
+
+Writing checkpoint, step 31423203 at Tue Apr 30 20:29:56 2024
+
+
+           Step           Time         Lambda
+       31500000    31500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.03250e+03    4.51368e+01    4.46374e+01    3.21771e+02   -1.37126e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -5.99685e+02    4.87322e+02   -3.95862e+01    1.31989e+03    1.28031e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.93701e+02    0.00000e+00    5.64110e-06
+
+Writing checkpoint, step 31998357 at Tue Apr 30 20:44:56 2024
+
+
+           Step           Time         Lambda
+       32000000    32000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18602e+03    3.52094e+01    4.03706e+01    3.12310e+02   -1.36064e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.88908e+02    4.67126e+02   -8.51740e+00    1.40513e+03    1.39661e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.12668e+02    0.00000e+00    5.54823e-06
+
+           Step           Time         Lambda
+       32500000    32500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12281e+03    2.76602e+01    5.93644e+01    3.23737e+02   -1.35640e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.94176e+02    4.61530e+02   -5.54681e+01    1.32675e+03    1.27129e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.95228e+02    0.00000e+00    5.85009e-06
+
+Writing checkpoint, step 32519854 at Tue Apr 30 20:59:56 2024
+
+
+           Step           Time         Lambda
+       33000000    33000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18327e+03    2.51196e+01    5.70413e+00    3.03375e+02   -1.34502e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.61666e+02    4.43029e+02   -4.61869e+01    1.33336e+03    1.28718e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96699e+02    0.00000e+00    6.03041e-06
+
+Writing checkpoint, step 33022797 at Tue Apr 30 21:14:56 2024
+
+
+           Step           Time         Lambda
+       33500000    33500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.25546e+03    2.77465e+01    5.15950e+01    2.97831e+02   -1.34387e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.91946e+02    4.53761e+02    5.05791e+01    1.49180e+03    1.54237e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.31953e+02    0.00000e+00    5.88560e-06
+
+Writing checkpoint, step 33525675 at Tue Apr 30 21:29:56 2024
+
+
+           Step           Time         Lambda
+       34000000    34000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.23193e+03    2.70706e+01    2.34719e+01    2.99716e+02   -1.35207e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.75510e+02    4.63196e+02    1.77998e+01    1.34060e+03    1.35840e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98310e+02    0.00000e+00    5.85109e-06
+
+Writing checkpoint, step 34026760 at Tue Apr 30 21:44:56 2024
+
+
+           Step           Time         Lambda
+       34500000    34500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10885e+03    5.38764e+01    1.21702e+01    3.01424e+02   -1.34883e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.86928e+02    4.32412e+02   -1.27017e+02    1.36528e+03    1.23826e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03801e+02    0.00000e+00    6.09174e-06
+
+Writing checkpoint, step 34525379 at Tue Apr 30 21:59:56 2024
+
+
+           Step           Time         Lambda
+       35000000    35000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09410e+03    3.38828e+01    2.36966e+01    2.84523e+02   -1.37804e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.42145e+02    5.21061e+02   -6.29233e+01    1.34798e+03    1.28506e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.99951e+02    0.00000e+00    5.97584e-06
+
+Writing checkpoint, step 35031070 at Tue Apr 30 22:14:56 2024
+
+
+           Step           Time         Lambda
+       35500000    35500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05274e+03    3.89445e+01    7.85767e+00    2.98618e+02   -1.35984e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.52162e+02    4.92099e+02   -1.21745e+02    1.40481e+03    1.28307e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.12597e+02    0.00000e+00    5.39113e-06
+
+Writing checkpoint, step 35546344 at Tue Apr 30 22:29:56 2024
+
+
+           Step           Time         Lambda
+       36000000    36000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13310e+03    2.78700e+01    7.16748e+01    3.06289e+02   -1.31635e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.75747e+02    3.87732e+02   -6.54358e+01    1.40089e+03    1.33546e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11725e+02    0.00000e+00    5.49653e-06
+
+Writing checkpoint, step 36057974 at Tue Apr 30 22:44:56 2024
+
+
+           Step           Time         Lambda
+       36500000    36500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04569e+03    4.40180e+01    2.43752e+01    2.92107e+02   -1.33675e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.83283e+02    4.39409e+02   -1.74433e+02    1.28584e+03    1.11141e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.86124e+02    0.00000e+00    5.52329e-06
+
+Writing checkpoint, step 36555937 at Tue Apr 30 22:59:56 2024
+
+
+           Step           Time         Lambda
+       37000000    37000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09438e+03    3.57927e+01    5.84661e+01    3.19237e+02   -1.31969e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.87181e+02    4.28865e+02   -7.01272e+01    1.32528e+03    1.25515e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.94901e+02    0.00000e+00    5.72472e-06
+
+Writing checkpoint, step 37056191 at Tue Apr 30 23:14:56 2024
+
+
+           Step           Time         Lambda
+       37500000    37500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10758e+03    3.79217e+01   -1.76012e+01    3.01340e+02   -1.36908e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.86297e+02    4.98962e+02   -1.27175e+02    1.47644e+03    1.34926e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.28536e+02    0.00000e+00    6.01154e-06
+
+Writing checkpoint, step 37551462 at Tue Apr 30 23:29:56 2024
+
+
+           Step           Time         Lambda
+       38000000    38000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16444e+03    2.47645e+01    3.24013e+01    2.90876e+02   -1.35205e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.21219e+02    4.72368e+02   -8.84245e+01    1.33695e+03    1.24853e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.97498e+02    0.00000e+00    5.46280e-06
+
+Writing checkpoint, step 38039662 at Tue Apr 30 23:44:56 2024
+
+
+           Step           Time         Lambda
+       38500000    38500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12242e+03    4.61830e+01    1.15516e+01    3.11111e+02   -1.34990e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.78510e+02    4.57831e+02   -1.79307e+02    1.29381e+03    1.11451e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.87898e+02    0.00000e+00    5.74245e-06
+
+Writing checkpoint, step 38517265 at Tue Apr 30 23:59:56 2024
+
+
+Writing checkpoint, step 38989779 at Wed May  1 00:14:56 2024
+
+
+           Step           Time         Lambda
+       39000000    39000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15345e+03    3.21072e+01    5.53902e+00    3.10687e+02   -1.34586e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.81419e+02    4.40388e+02   -1.85113e+02    1.36618e+03    1.18107e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04001e+02    0.00000e+00    5.94477e-06
+
+Writing checkpoint, step 39464522 at Wed May  1 00:29:56 2024
+
+
+           Step           Time         Lambda
+       39500000    39500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13002e+03    2.26493e+01    3.81864e+01    2.99336e+02   -1.36462e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.86315e+02    4.75897e+02   -1.84854e+02    1.33730e+03    1.15245e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.97575e+02    0.00000e+00    6.28721e-06
+
+Writing checkpoint, step 39993699 at Wed May  1 00:44:56 2024
+
+
+           Step           Time         Lambda
+       40000000    40000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07125e+03    3.87524e+01    5.81975e+01    3.01130e+02   -1.34944e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.97701e+02    4.37623e+02   -2.40190e+02    1.38085e+03    1.14066e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.07265e+02    0.00000e+00    5.71052e-06
+
+           Step           Time         Lambda
+       40500000    40500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19162e+03    2.58257e+01   -2.10823e+01    3.11772e+02   -1.37717e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.70650e+02    4.80424e+02   -1.59265e+02    1.28668e+03    1.12742e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.86312e+02    0.00000e+00    5.59256e-06
+
+Writing checkpoint, step 40530925 at Wed May  1 00:59:56 2024
+
+
+           Step           Time         Lambda
+       41000000    41000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14891e+03    5.19680e+01    1.05240e+02    3.09515e+02   -1.32982e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.29201e+02    4.16799e+02   -2.65906e+01    1.38372e+03    1.35713e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.07904e+02    0.00000e+00    5.84102e-06
+
+Writing checkpoint, step 41068363 at Wed May  1 01:14:56 2024
+
+
+           Step           Time         Lambda
+       41500000    41500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15026e+03    4.63561e+01    7.00943e+01    3.19726e+02   -1.33431e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.05151e+02    4.26129e+02   -2.68999e+01    1.32353e+03    1.29663e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.94511e+02    0.00000e+00    5.94061e-06
+
+Writing checkpoint, step 41609924 at Wed May  1 01:29:56 2024
+
+
+           Step           Time         Lambda
+       42000000    42000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17368e+03    2.71466e+01    1.56348e+01    3.26791e+02   -1.33696e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.62444e+02    4.25216e+02   -1.30940e+02    1.36215e+03    1.23121e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03106e+02    0.00000e+00    5.68454e-06
+
+Writing checkpoint, step 42152122 at Wed May  1 01:44:56 2024
+
+
+           Step           Time         Lambda
+       42500000    42500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.87634e+02    4.22247e+01    3.04222e+01    3.24683e+02   -1.35813e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.33852e+02    4.08761e+02   -2.98260e+02    1.36568e+03    1.06742e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03890e+02    0.00000e+00    5.74298e-06
+
+Writing checkpoint, step 42691562 at Wed May  1 01:59:56 2024
+
+
+           Step           Time         Lambda
+       43000000    43000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16705e+03    3.72902e+01    1.20130e+00    3.36402e+02   -1.35288e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.89743e+02    4.46407e+02   -1.54268e+02    1.40134e+03    1.24707e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11825e+02    0.00000e+00    5.77830e-06
+
+Writing checkpoint, step 43230034 at Wed May  1 02:14:56 2024
+
+
+           Step           Time         Lambda
+       43500000    43500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13710e+03    2.81888e+01    9.55633e+01    3.05773e+02   -1.32343e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.54015e+02    3.83526e+02   -1.27293e+02    1.45342e+03    1.32613e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.23414e+02    0.00000e+00    5.46501e-06
+
+Writing checkpoint, step 43765800 at Wed May  1 02:29:56 2024
+
+
+           Step           Time         Lambda
+       44000000    44000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07737e+03    3.22109e+01    3.50121e+01    3.22004e+02   -1.34333e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.41243e+02    4.23410e+02   -1.94572e+02    1.34530e+03    1.15073e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.99356e+02    0.00000e+00    5.73975e-06
+
+Writing checkpoint, step 44302036 at Wed May  1 02:44:56 2024
+
+
+           Step           Time         Lambda
+       44500000    44500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15966e+03    2.48292e+01    9.55177e+00    3.00713e+02   -1.34986e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.22344e+02    4.25365e+02   -1.52091e+02    1.37597e+03    1.22388e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06181e+02    0.00000e+00    5.60247e-06
+
+Writing checkpoint, step 44843090 at Wed May  1 02:59:56 2024
+
+
+           Step           Time         Lambda
+       45000000    45000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11084e+03    2.76550e+01    3.13191e+01    3.19958e+02   -1.36650e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.85099e+02    4.83672e+02   -7.81568e+01    1.39685e+03    1.31869e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.10826e+02    0.00000e+00    5.75743e-06
+
+Writing checkpoint, step 45384887 at Wed May  1 03:14:56 2024
+
+
+           Step           Time         Lambda
+       45500000    45500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07104e+03    2.59471e+01    4.10215e+01    2.87266e+02   -1.36126e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.63448e+02    4.64115e+02   -2.35312e+02    1.37727e+03    1.14196e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06470e+02    0.00000e+00    5.44920e-06
+
+Writing checkpoint, step 45926244 at Wed May  1 03:29:56 2024
+
+
+           Step           Time         Lambda
+       46000000    46000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04879e+03    3.95714e+01    3.15608e+01    2.94990e+02   -1.37450e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.64894e+02    4.64785e+02   -2.59693e+02    1.42620e+03    1.16651e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.17357e+02    0.00000e+00    5.53956e-06
+
+Writing checkpoint, step 46464767 at Wed May  1 03:44:56 2024
+
+
+           Step           Time         Lambda
+       46500000    46500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11604e+03    2.61062e+01    1.96159e+01    3.08016e+02   -1.37487e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.82992e+02    5.08662e+02   -1.79420e+02    1.37922e+03    1.19980e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06903e+02    0.00000e+00    5.69421e-06
+
+           Step           Time         Lambda
+       47000000    47000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06679e+03    5.75206e+01   -3.10371e+00    2.97684e+02   -1.36920e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.88356e+02    4.74823e+02   -2.63840e+02    1.36174e+03    1.09790e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03013e+02    0.00000e+00    5.90857e-06
+
+Writing checkpoint, step 47004741 at Wed May  1 03:59:56 2024
+
+
+           Step           Time         Lambda
+       47500000    47500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07838e+03    3.83986e+01   -1.31329e+01    3.12527e+02   -1.36772e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.08730e+02    4.81571e+02   -1.78711e+02    1.29681e+03    1.11810e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88564e+02    0.00000e+00    5.84290e-06
+
+Writing checkpoint, step 47549635 at Wed May  1 04:14:56 2024
+
+
+           Step           Time         Lambda
+       48000000    48000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09714e+03    4.48956e+01    7.04544e+01    2.84625e+02   -1.36342e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.12579e+02    4.87413e+02   -9.14731e+01    1.37964e+03    1.28817e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06996e+02    0.00000e+00    5.76064e-06
+
+Writing checkpoint, step 48100720 at Wed May  1 04:29:56 2024
+
+
+           Step           Time         Lambda
+       48500000    48500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07720e+03    3.85908e+01    5.68066e+01    3.15158e+02   -1.36412e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.45737e+02    4.40001e+02   -1.82106e+02    1.31737e+03    1.13526e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.93140e+02    0.00000e+00    5.75015e-06
+
+Writing checkpoint, step 48643528 at Wed May  1 04:44:56 2024
+
+
+           Step           Time         Lambda
+       49000000    49000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19507e+03    3.26943e+01   -7.03089e+00    3.15043e+02   -1.36411e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.44555e+02    4.43092e+02   -1.29788e+02    1.37309e+03    1.24330e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05539e+02    0.00000e+00    5.81515e-06
+
+Writing checkpoint, step 49187124 at Wed May  1 04:59:56 2024
+
+
+           Step           Time         Lambda
+       49500000    49500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12835e+03    3.67623e+01    9.51740e+01    2.86735e+02   -1.32198e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.05634e+02    4.27639e+02   -5.29506e+01    1.39422e+03    1.34127e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.10240e+02    0.00000e+00    5.54070e-06
+
+Writing checkpoint, step 49727383 at Wed May  1 05:14:56 2024
+
+
+           Step           Time         Lambda
+       50000000    50000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17236e+03    3.91120e+01    6.03381e+01    3.24990e+02   -1.31565e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.91932e+02    3.83091e+02   -2.76904e+01    1.26308e+03    1.23539e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.81059e+02    0.00000e+00    5.47094e-06
+
+Writing checkpoint, step 50267055 at Wed May  1 05:29:56 2024
+
+
+           Step           Time         Lambda
+       50500000    50500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15810e+03    2.94841e+01   -1.74412e+00    3.14424e+02   -1.36300e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.12526e+02    4.25360e+02   -1.49904e+02    1.42038e+03    1.27047e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.16061e+02    0.00000e+00    5.55896e-06
+
+Writing checkpoint, step 50809237 at Wed May  1 05:44:56 2024
+
+
+           Step           Time         Lambda
+       51000000    51000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14121e+03    3.37537e+01    4.80489e+01    3.14397e+02   -1.33809e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.84732e+02    4.32654e+02   -5.27539e+01    1.35329e+03    1.30054e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01134e+02    0.00000e+00    5.62141e-06
+
+Writing checkpoint, step 51350313 at Wed May  1 05:59:56 2024
+
+
+           Step           Time         Lambda
+       51500000    51500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07264e+03    2.38024e+01   -3.67929e+01    2.94332e+02   -1.41735e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.31977e+02    5.98252e+02   -1.97096e+02    1.33408e+03    1.13699e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96859e+02    0.00000e+00    5.62255e-06
+
+Writing checkpoint, step 51890637 at Wed May  1 06:14:56 2024
+
+
+           Step           Time         Lambda
+       52000000    52000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08184e+03    3.58352e+01    1.96064e+01    2.97009e+02   -1.39268e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.40034e+02    5.18929e+02   -1.79494e+02    1.32300e+03    1.14351e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.94393e+02    0.00000e+00    5.70112e-06
+
+Writing checkpoint, step 52432351 at Wed May  1 06:29:56 2024
+
+
+           Step           Time         Lambda
+       52500000    52500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.03278e+03    1.98798e+01   -7.80147e+01    3.21727e+02   -1.40979e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.38490e+02    6.01566e+02   -2.50342e+02    1.42293e+03    1.17259e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.16629e+02    0.00000e+00    5.66077e-06
+
+Writing checkpoint, step 52974312 at Wed May  1 06:44:56 2024
+
+
+           Step           Time         Lambda
+       53000000    53000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.22838e+03    4.74838e+01   -7.16248e+01    2.99815e+02   -1.42954e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.26553e+02    6.35159e+02   -1.68730e+01    1.36883e+03    1.35196e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04591e+02    0.00000e+00    5.48184e-06
+
+           Step           Time         Lambda
+       53500000    53500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.03555e+03    2.41042e+01   -1.87958e+01    2.93029e+02   -1.38294e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.19164e+02    5.53291e+02   -2.14918e+02    1.25274e+03    1.03782e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.78759e+02    0.00000e+00    5.50374e-06
+
+Writing checkpoint, step 53516736 at Wed May  1 06:59:56 2024
+
+
+           Step           Time         Lambda
+       54000000    54000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07199e+03    2.34166e+01    5.65637e+01    3.35907e+02   -1.36830e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.20748e+02    4.92548e+02   -1.08628e+02    1.42023e+03    1.31160e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.16028e+02    0.00000e+00    5.50964e-06
+
+Writing checkpoint, step 54056522 at Wed May  1 07:14:56 2024
+
+
+           Step           Time         Lambda
+       54500000    54500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.20964e+03    4.22296e+01    1.19920e+01    3.10248e+02   -1.37284e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.19357e+02    5.05172e+02   -1.29193e+01    1.34054e+03    1.32762e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98295e+02    0.00000e+00    5.77579e-06
+
+Writing checkpoint, step 54602459 at Wed May  1 07:29:56 2024
+
+
+           Step           Time         Lambda
+       55000000    55000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13326e+03    4.69186e+01    4.58710e+01    3.05622e+02   -1.36512e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.74702e+02    4.80260e+02   -2.78947e+01    1.36635e+03    1.33845e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04038e+02    0.00000e+00    5.78414e-06
+
+Writing checkpoint, step 55148620 at Wed May  1 07:44:56 2024
+
+
+           Step           Time         Lambda
+       55500000    55500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19419e+03    3.77460e+01   -1.69269e+01    3.22702e+02   -1.37904e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.07199e+02    4.91164e+02   -5.73642e+01    1.43993e+03    1.38257e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.20412e+02    0.00000e+00    5.68134e-06
+
+Writing checkpoint, step 55695468 at Wed May  1 07:59:56 2024
+
+
+           Step           Time         Lambda
+       56000000    56000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11851e+03    3.14795e+01    8.24197e+00    3.14130e+02   -1.37961e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.80078e+02    4.83863e+02   -1.03460e+02    1.41550e+03    1.31204e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.14976e+02    0.00000e+00    5.63738e-06
+
+Writing checkpoint, step 56248152 at Wed May  1 08:14:56 2024
+
+
+           Step           Time         Lambda
+       56500000    56500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09544e+03    3.24971e+01   -1.57264e+01    3.19581e+02   -1.37608e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.35235e+02    4.69792e+02   -2.09734e+02    1.36729e+03    1.15755e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04248e+02    0.00000e+00    5.76750e-06
+
+Writing checkpoint, step 56800831 at Wed May  1 08:29:56 2024
+
+
+           Step           Time         Lambda
+       57000000    57000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09968e+03    5.88294e+01   -5.60142e+00    3.08704e+02   -1.37957e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.58147e+02    5.02605e+02   -1.73503e+02    1.41310e+03    1.23959e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.14441e+02    0.00000e+00    5.52516e-06
+
+Writing checkpoint, step 57347714 at Wed May  1 08:44:56 2024
+
+
+           Step           Time         Lambda
+       57500000    57500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08408e+03    4.28530e+01    1.59655e+01    2.96608e+02   -1.34779e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.70251e+02    4.68163e+02   -2.10372e+02    1.32133e+03    1.11096e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.94022e+02    0.00000e+00    5.69080e-06
+
+Writing checkpoint, step 57901845 at Wed May  1 08:59:56 2024
+
+
+           Step           Time         Lambda
+       58000000    58000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12461e+03    3.80059e+01    4.53938e+01    3.05947e+02   -1.37392e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.80566e+02    4.73071e+02   -1.67461e+02    1.31334e+03    1.14588e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.92243e+02    0.00000e+00    5.48559e-06
+
+Writing checkpoint, step 58454772 at Wed May  1 09:14:56 2024
+
+
+           Step           Time         Lambda
+       58500000    58500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10399e+03    2.74741e+01    1.50727e+01    2.91630e+02   -1.34569e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.53201e+02    4.35424e+02   -2.25294e+02    1.27206e+03    1.04677e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.83058e+02    0.00000e+00    5.61234e-06
+
+           Step           Time         Lambda
+       59000000    59000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.01393e+03    2.85384e+01    4.74356e+01    2.94899e+02   -1.37176e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.51417e+02    4.86156e+02   -2.52221e+02    1.39370e+03    1.14148e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.10126e+02    0.00000e+00    5.64722e-06
+
+Writing checkpoint, step 59004226 at Wed May  1 09:29:56 2024
+
+
+           Step           Time         Lambda
+       59500000    59500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17395e+03    4.60332e+01    8.26460e+01    2.90446e+02   -1.29882e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.43483e+02    3.52822e+02   -9.64028e+01    1.34878e+03    1.25238e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.00129e+02    0.00000e+00    5.37850e-06
+
+Writing checkpoint, step 59550330 at Wed May  1 09:44:56 2024
+
+
+           Step           Time         Lambda
+       60000000    60000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16298e+03    2.53958e+01    4.86882e+01    3.10393e+02   -1.30440e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.25280e+02    3.62355e+02   -1.19871e+02    1.30329e+03    1.18342e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.90008e+02    0.00000e+00    5.67845e-06
+
+Writing checkpoint, step 60099278 at Wed May  1 09:59:56 2024
+
+
+           Step           Time         Lambda
+       60500000    60500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16067e+03    4.55390e+01    4.05330e+01    3.04911e+02   -1.33629e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.34212e+02    4.43194e+02   -7.56575e+01    1.52883e+03    1.45318e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.40195e+02    0.00000e+00    5.95835e-06
+
+Writing checkpoint, step 60650584 at Wed May  1 10:14:56 2024
+
+
+           Step           Time         Lambda
+       61000000    61000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12810e+03    4.55588e+01    5.52082e+01    3.04579e+02   -1.36124e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.24161e+02    4.70300e+02   -8.16512e+01    1.42964e+03    1.34799e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.18123e+02    0.00000e+00    6.16057e-06
+
+Writing checkpoint, step 61198263 at Wed May  1 10:29:56 2024
+
+
+           Step           Time         Lambda
+       61500000    61500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14194e+03    4.40190e+01    1.91214e+01    2.88515e+02   -1.37823e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.46409e+02    4.89283e+02   -1.41760e+02    1.31229e+03    1.17053e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.92011e+02    0.00000e+00    5.46128e-06
+
+Writing checkpoint, step 61742780 at Wed May  1 10:44:56 2024
+
+
+           Step           Time         Lambda
+       62000000    62000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16981e+03    3.82423e+01    7.97414e+01    3.28292e+02   -1.31527e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.06129e+02    3.94953e+02   -1.03587e+01    1.39499e+03    1.38463e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.10411e+02    0.00000e+00    5.73032e-06
+
+Writing checkpoint, step 62286161 at Wed May  1 10:59:56 2024
+
+
+           Step           Time         Lambda
+       62500000    62500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15471e+03    3.01298e+01    6.76336e+01    3.01762e+02   -1.31058e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.54344e+02    3.92764e+02   -1.17920e+02    1.43407e+03    1.31615e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.19109e+02    0.00000e+00    5.78260e-06
+
+Writing checkpoint, step 62822572 at Wed May  1 11:14:56 2024
+
+
+           Step           Time         Lambda
+       63000000    63000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16767e+03    3.29413e+01    4.98391e+01    3.24153e+02   -1.35566e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.93928e+02    4.50969e+02   -2.40238e+01    1.37811e+03    1.35409e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06656e+02    0.00000e+00    5.45962e-06
+
+Writing checkpoint, step 63360200 at Wed May  1 11:29:56 2024
+
+
+           Step           Time         Lambda
+       63500000    63500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05637e+03    2.57737e+01    5.64080e+01    2.88695e+02   -1.33021e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.53720e+02    4.22682e+02   -2.33998e+02    1.34204e+03    1.10804e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98629e+02    0.00000e+00    5.62963e-06
+
+Writing checkpoint, step 63896336 at Wed May  1 11:44:56 2024
+
+
+           Step           Time         Lambda
+       64000000    64000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    9.98051e+02    2.99206e+01    3.24997e+01    3.29670e+02   -1.31719e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.61174e+02    3.93759e+02   -2.94466e+02    1.32851e+03    1.03404e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.95618e+02    0.00000e+00    5.64649e-06
+
+Writing checkpoint, step 64433094 at Wed May  1 11:59:56 2024
+
+
+           Step           Time         Lambda
+       64500000    64500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14926e+03    3.23642e+01    4.99517e+01    3.16727e+02   -1.33505e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.06775e+02    4.13882e+02   -7.96364e+01    1.46009e+03    1.38046e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.24899e+02    0.00000e+00    6.01708e-06
+
+Writing checkpoint, step 64969077 at Wed May  1 12:14:56 2024
+
+
+           Step           Time         Lambda
+       65000000    65000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11147e+03    3.29128e+01    8.69438e+00    3.20842e+02   -1.35320e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.68288e+02    4.32707e+02   -1.14854e+02    1.29065e+03    1.17579e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.87194e+02    0.00000e+00    5.84197e-06
+
+           Step           Time         Lambda
+       65500000    65500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17920e+03    2.04185e+01    2.12257e+01    3.03646e+02   -1.35891e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.47611e+02    4.57630e+02   -1.24402e+02    1.30952e+03    1.18512e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.91393e+02    0.00000e+00    5.87645e-06
+
+Writing checkpoint, step 65507938 at Wed May  1 12:29:56 2024
+
+
+           Step           Time         Lambda
+       66000000    66000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11848e+03    4.33328e+01    5.46662e+01    2.90581e+02   -1.32540e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.40916e+02    3.82020e+02   -1.77235e+02    1.35564e+03    1.17841e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01656e+02    0.00000e+00    5.71263e-06
+
+Writing checkpoint, step 66045924 at Wed May  1 12:44:56 2024
+
+
+           Step           Time         Lambda
+       66500000    66500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13324e+03    2.73376e+01    1.74804e+01    2.97206e+02   -1.35573e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.48650e+02    4.77914e+02   -1.51202e+02    1.30353e+03    1.15233e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.90060e+02    0.00000e+00    5.56213e-06
+
+Writing checkpoint, step 66585275 at Wed May  1 12:59:56 2024
+
+
+           Step           Time         Lambda
+       67000000    67000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19519e+03    3.64819e+01    4.11806e+01    3.12720e+02   -1.35672e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.45891e+02    4.48225e+02   -6.88130e+01    1.30589e+03    1.23708e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.90586e+02    0.00000e+00    5.81640e-06
+
+Writing checkpoint, step 67127964 at Wed May  1 13:14:56 2024
+
+
+           Step           Time         Lambda
+       67500000    67500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06763e+03    3.04848e+01    3.61885e+01    3.27742e+02   -1.39074e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.47276e+02    5.27142e+02   -4.88264e+01    1.36705e+03    1.31822e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04194e+02    0.00000e+00    5.33611e-06
+
+Writing checkpoint, step 67670864 at Wed May  1 13:29:56 2024
+
+
+           Step           Time         Lambda
+       68000000    68000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08924e+03    3.76318e+01   -2.07673e+01    3.19049e+02   -1.38560e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.68281e+02    5.10899e+02   -1.17826e+02    1.30395e+03    1.18612e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.90154e+02    0.00000e+00    5.99923e-06
+
+Writing checkpoint, step 68212926 at Wed May  1 13:44:56 2024
+
+
+           Step           Time         Lambda
+       68500000    68500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11593e+03    5.58705e+01    2.14366e+01    3.33173e+02   -1.32511e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.33449e+02    3.92111e+02   -1.40038e+02    1.46827e+03    1.32823e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.26718e+02    0.00000e+00    5.76080e-06
+
+Writing checkpoint, step 68749400 at Wed May  1 13:59:56 2024
+
+
+           Step           Time         Lambda
+       69000000    69000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08309e+03    4.27091e+01    8.80935e+01    3.07116e+02   -1.33290e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.31982e+02    3.98527e+02   -1.45344e+02    1.32030e+03    1.17496e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.93792e+02    0.00000e+00    6.03705e-06
+
+Writing checkpoint, step 69286858 at Wed May  1 14:14:56 2024
+
+
+           Step           Time         Lambda
+       69500000    69500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07845e+03    2.40376e+01    6.93617e+01    3.23432e+02   -1.34571e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.11132e+02    4.82319e+02   -7.92429e+01    1.39104e+03    1.31180e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.09534e+02    0.00000e+00    5.70893e-06
+
+Writing checkpoint, step 69826143 at Wed May  1 14:29:56 2024
+
+
+           Step           Time         Lambda
+       70000000    70000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19381e+03    3.92045e+01    3.78244e+00    3.43898e+02   -1.39057e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.34632e+02    5.73389e+02    1.28875e+02    1.31865e+03    1.44753e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.93426e+02    0.00000e+00    5.70981e-06
+
+Writing checkpoint, step 70367011 at Wed May  1 14:44:56 2024
+
+
+           Step           Time         Lambda
+       70500000    70500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09208e+03    3.46171e+01   -1.02828e+02    3.03640e+02   -1.40542e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.91869e+02    5.57060e+02   -2.12719e+02    1.41756e+03    1.20484e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.15434e+02    0.00000e+00    5.90135e-06
+
+Writing checkpoint, step 70912822 at Wed May  1 14:59:56 2024
+
+
+           Step           Time         Lambda
+       71000000    71000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.05937e+03    3.90083e+01   -2.56018e+01    3.26449e+02   -1.38563e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.97513e+02    5.48079e+02   -1.35836e+02    1.39203e+03    1.25620e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.09754e+02    0.00000e+00    5.80015e-06
+
+Writing checkpoint, step 71451217 at Wed May  1 15:14:56 2024
+
+
+           Step           Time         Lambda
+       71500000    71500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10621e+03    2.73146e+01    9.20241e+00    3.28498e+02   -1.38303e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.95039e+02    5.29011e+02   -7.78361e+01    1.35959e+03    1.28176e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.02536e+02    0.00000e+00    5.91957e-06
+
+Writing checkpoint, step 71992810 at Wed May  1 15:29:56 2024
+
+
+           Step           Time         Lambda
+       72000000    72000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16719e+03    3.53852e+01    1.44931e+01    3.16853e+02   -1.37326e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.15536e+02    4.96867e+02   -5.80089e+01    1.39514e+03    1.33713e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.10445e+02    0.00000e+00    5.55359e-06
+
+           Step           Time         Lambda
+       72500000    72500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11659e+03    3.11448e+01   -1.95090e+01    3.10528e+02   -1.36938e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.93088e+02    5.23874e+02   -9.98371e+01    1.42129e+03    1.32146e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.16265e+02    0.00000e+00    5.55827e-06
+
+Writing checkpoint, step 72537615 at Wed May  1 15:44:56 2024
+
+
+           Step           Time         Lambda
+       73000000    73000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10691e+03    2.33699e+01    3.49729e+01    3.15571e+02   -1.33446e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.84634e+02    4.31909e+02   -1.06357e+02    1.34395e+03    1.23759e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.99054e+02    0.00000e+00    5.70812e-06
+
+Writing checkpoint, step 73083362 at Wed May  1 15:59:56 2024
+
+
+           Step           Time         Lambda
+       73500000    73500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08103e+03    4.48579e+01    8.42806e+01    3.24444e+02   -1.30928e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.38906e+02    3.64153e+02   -4.94214e+01    1.43255e+03    1.38313e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.18770e+02    0.00000e+00    5.44717e-06
+
+Writing checkpoint, step 73633208 at Wed May  1 16:14:56 2024
+
+
+           Step           Time         Lambda
+       74000000    74000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14535e+03    4.31454e+01    2.59262e+01    3.14470e+02   -1.34547e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.52914e+02    4.39385e+02   -3.01085e+01    1.32304e+03    1.29294e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.94403e+02    0.00000e+00    5.49740e-06
+
+Writing checkpoint, step 74191701 at Wed May  1 16:29:56 2024
+
+
+           Step           Time         Lambda
+       74500000    74500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12672e+03    3.67323e+01    1.24881e+01    3.01282e+02   -1.37251e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.08924e+02    5.20387e+02   -8.38279e+01    1.31663e+03    1.23280e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.92975e+02    0.00000e+00    5.51165e-06
+
+Writing checkpoint, step 74748640 at Wed May  1 16:44:56 2024
+
+
+           Step           Time         Lambda
+       75000000    75000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18299e+03    3.72205e+01    8.04376e+00    3.17125e+02   -1.35767e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.44739e+02    4.72140e+02   -8.48874e+01    1.42340e+03    1.33851e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.16734e+02    0.00000e+00    5.59155e-06
+
+Writing checkpoint, step 75306439 at Wed May  1 16:59:56 2024
+
+
+           Step           Time         Lambda
+       75500000    75500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18285e+03    3.77480e+01   -3.40093e+01    3.11636e+02   -1.37304e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.96818e+02    4.95729e+02   -7.58994e+01    1.26107e+03    1.18517e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.80611e+02    0.00000e+00    5.40137e-06
+
+Writing checkpoint, step 75856964 at Wed May  1 17:14:56 2024
+
+
+           Step           Time         Lambda
+       76000000    76000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.16891e+03    2.96696e+01   -6.70650e+00    3.11478e+02   -1.40087e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.73704e+02    5.38347e+02   -1.32880e+02    1.31616e+03    1.18328e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.92870e+02    0.00000e+00    5.85866e-06
+
+Writing checkpoint, step 76406912 at Wed May  1 17:29:56 2024
+
+
+           Step           Time         Lambda
+       76500000    76500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12990e+03    3.70897e+01    1.78756e+00    3.13211e+02   -1.38357e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.32429e+02    4.99096e+02   -1.34916e+02    1.39984e+03    1.26492e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.11491e+02    0.00000e+00    5.52538e-06
+
+Writing checkpoint, step 76951742 at Wed May  1 17:44:56 2024
+
+
+           Step           Time         Lambda
+       77000000    77000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04997e+03    4.42197e+01   -3.62069e+00    3.55974e+02   -1.35799e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.29529e+02    4.60952e+02   -1.80024e+02    1.34311e+03    1.16309e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98868e+02    0.00000e+00    6.03429e-06
+
+Writing checkpoint, step 77491701 at Wed May  1 17:59:56 2024
+
+
+           Step           Time         Lambda
+       77500000    77500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14123e+03    5.76995e+01    2.75363e+01    2.96291e+02   -1.38649e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.87746e+02    5.10156e+02   -1.41321e+02    1.41669e+03    1.27537e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.15241e+02    0.00000e+00    5.99881e-06
+
+           Step           Time         Lambda
+       78000000    78000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08583e+03    4.13741e+01    1.08713e+01    2.96723e+02   -1.33318e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.11504e+02    4.19453e+02   -1.90428e+02    1.47683e+03    1.28640e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.28624e+02    0.00000e+00    5.57500e-06
+
+Writing checkpoint, step 78031397 at Wed May  1 18:14:56 2024
+
+
+           Step           Time         Lambda
+       78500000    78500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14446e+03    3.45940e+01    1.18185e+01    3.25162e+02   -1.37922e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.50383e+02    4.92763e+02   -1.20808e+02    1.38681e+03    1.26600e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.08592e+02    0.00000e+00    5.62854e-06
+
+Writing checkpoint, step 78572870 at Wed May  1 18:29:56 2024
+
+
+           Step           Time         Lambda
+       79000000    79000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11059e+03    2.53405e+01   -2.22352e+00    3.08956e+02   -1.36527e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.47913e+02    4.76970e+02   -1.93560e+02    1.33541e+03    1.14185e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.97153e+02    0.00000e+00    5.51818e-06
+
+Writing checkpoint, step 79111107 at Wed May  1 18:44:56 2024
+
+
+           Step           Time         Lambda
+       79500000    79500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19541e+03    4.47708e+01   -1.43254e+01    3.07588e+02   -1.35639e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.05928e+02    4.15874e+02   -1.13003e+02    1.37047e+03    1.25746e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04955e+02    0.00000e+00    5.87296e-06
+
+Writing checkpoint, step 79649791 at Wed May  1 18:59:56 2024
+
+
+           Step           Time         Lambda
+       80000000    80000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12957e+03    3.60383e+01    6.25109e+01    3.06826e+02   -1.34979e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.28347e+02    4.30908e+02   -1.12284e+02    1.32951e+03    1.21723e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.95842e+02    0.00000e+00    5.78492e-06
+
+Writing checkpoint, step 80188716 at Wed May  1 19:14:56 2024
+
+
+           Step           Time         Lambda
+       80500000    80500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04910e+03    4.01997e+01    9.15134e+01    3.07415e+02   -1.32142e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.49850e+02    3.72130e+02   -2.10906e+02    1.31172e+03    1.10081e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.91882e+02    0.00000e+00    5.49942e-06
+
+Writing checkpoint, step 80728674 at Wed May  1 19:29:56 2024
+
+
+           Step           Time         Lambda
+       81000000    81000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.21547e+03    3.54650e+01    3.01114e+01    3.35000e+02   -1.35897e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.55035e+02    4.56237e+02   -4.17200e+01    1.33182e+03    1.29010e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96357e+02    0.00000e+00    5.83335e-06
+
+Writing checkpoint, step 81264659 at Wed May  1 19:44:56 2024
+
+
+           Step           Time         Lambda
+       81500000    81500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15906e+03    3.37655e+01    5.20355e+01    3.07595e+02   -1.32491e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.50426e+02    4.40098e+02   -8.27871e+01    1.36865e+03    1.28586e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04550e+02    0.00000e+00    5.68688e-06
+
+Writing checkpoint, step 81800416 at Wed May  1 19:59:56 2024
+
+
+           Step           Time         Lambda
+       82000000    82000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15610e+03    5.54055e+01    3.69822e+01    2.96689e+02   -1.38962e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.58514e+02    4.87090e+02   -1.15863e+02    1.45188e+03    1.33602e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.23071e+02    0.00000e+00    5.76114e-06
+
+Writing checkpoint, step 82336256 at Wed May  1 20:14:56 2024
+
+
+           Step           Time         Lambda
+       82500000    82500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10673e+03    3.88826e+01    8.77271e+00    3.19937e+02   -1.35345e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.36229e+02    4.23175e+02   -1.92184e+02    1.37278e+03    1.18060e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05470e+02    0.00000e+00    5.80764e-06
+
+Writing checkpoint, step 82870907 at Wed May  1 20:29:56 2024
+
+
+           Step           Time         Lambda
+       83000000    83000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13654e+03    4.20122e+01    2.27133e+01    3.15670e+02   -1.37920e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.46596e+02    4.44925e+02   -1.63930e+02    1.45336e+03    1.28943e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.23402e+02    0.00000e+00    5.79698e-06
+
+Writing checkpoint, step 83406661 at Wed May  1 20:44:56 2024
+
+
+           Step           Time         Lambda
+       83500000    83500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14125e+03    3.06796e+01    2.29702e+01    3.28713e+02   -1.35236e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.37422e+02    4.26706e+02   -1.39464e+02    1.37212e+03    1.23266e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05323e+02    0.00000e+00    5.77673e-06
+
+Writing checkpoint, step 83942246 at Wed May  1 20:59:56 2024
+
+
+           Step           Time         Lambda
+       84000000    84000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10276e+03    4.32106e+01    2.70862e+01    2.94229e+02   -1.33940e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.52565e+02    4.08801e+02   -2.15885e+02    1.49969e+03    1.28380e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.33709e+02    0.00000e+00    5.95551e-06
+
+Writing checkpoint, step 84478539 at Wed May  1 21:14:56 2024
+
+
+           Step           Time         Lambda
+       84500000    84500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08377e+03    3.41686e+01    6.79712e+01    3.14472e+02   -1.31390e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.57951e+02    3.78976e+02   -1.92485e+02    1.49399e+03    1.30150e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.32441e+02    0.00000e+00    5.68957e-06
+
+           Step           Time         Lambda
+       85000000    85000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17782e+03    4.64608e+01    5.67392e+01    3.13452e+02   -1.33872e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.63370e+02    4.06947e+02   -1.00669e+02    1.22095e+03    1.12028e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.71684e+02    0.00000e+00    5.33409e-06
+
+Writing checkpoint, step 85016820 at Wed May  1 21:29:56 2024
+
+
+           Step           Time         Lambda
+       85500000    85500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08968e+03    3.84487e+01    2.58358e+01    3.29667e+02   -1.39869e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.34571e+02    4.86427e+02   -1.63193e+02    1.40354e+03    1.24034e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.12314e+02    0.00000e+00    5.59786e-06
+
+Writing checkpoint, step 85554245 at Wed May  1 21:44:56 2024
+
+
+           Step           Time         Lambda
+       86000000    86000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09931e+03    3.50978e+01    4.09941e+01    3.19757e+02   -1.38258e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.41727e+02    4.79082e+02   -1.50070e+02    1.35677e+03    1.20670e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01907e+02    0.00000e+00    5.48523e-06
+
+Writing checkpoint, step 86093045 at Wed May  1 21:59:56 2024
+
+
+           Step           Time         Lambda
+       86500000    86500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19792e+03    3.01508e+01    3.25962e+01    3.11422e+02   -1.34752e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.22598e+02    4.95487e+02   -2.54782e+00    1.38801e+03    1.38546e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.08858e+02    0.00000e+00    5.78036e-06
+
+Writing checkpoint, step 86633035 at Wed May  1 22:14:56 2024
+
+
+           Step           Time         Lambda
+       87000000    87000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10356e+03    4.90364e+01   -5.84260e+00    3.15258e+02   -1.35294e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.28700e+02    4.46757e+02   -1.72876e+02    1.38080e+03    1.20793e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.07256e+02    0.00000e+00    5.56572e-06
+
+Writing checkpoint, step 87173831 at Wed May  1 22:29:56 2024
+
+
+           Step           Time         Lambda
+       87500000    87500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15525e+03    2.75648e+01    3.00410e+01    3.20460e+02   -1.36417e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.55132e+02    4.74099e+02   -1.11883e+02    1.35519e+03    1.24330e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01555e+02    0.00000e+00    5.43198e-06
+
+Writing checkpoint, step 87715794 at Wed May  1 22:44:56 2024
+
+
+           Step           Time         Lambda
+       88000000    88000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.20136e+03    4.97428e+01    2.15360e+01    2.92420e+02   -1.34714e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.18906e+02    4.61541e+02   -3.94457e+01    1.37962e+03    1.34017e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.06992e+02    0.00000e+00    5.75462e-06
+
+Writing checkpoint, step 88255216 at Wed May  1 22:59:56 2024
+
+
+           Step           Time         Lambda
+       88500000    88500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13627e+03    4.32191e+01    3.70332e+01    3.10715e+02   -1.36015e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.29124e+02    4.66550e+02   -9.54892e+01    1.31127e+03    1.21578e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.91782e+02    0.00000e+00    5.65388e-06
+
+Writing checkpoint, step 88801531 at Wed May  1 23:14:56 2024
+
+
+           Step           Time         Lambda
+       89000000    89000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.10483e+03    2.47514e+01   -1.68211e+01    3.19868e+02   -1.41590e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.85227e+02    5.68781e+02   -9.97247e+01    1.47409e+03    1.37437e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.28014e+02    0.00000e+00    5.93235e-06
+
+Writing checkpoint, step 89349870 at Wed May  1 23:29:56 2024
+
+
+           Step           Time         Lambda
+       89500000    89500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11124e+03    4.04881e+01    3.04077e+01    2.97785e+02   -1.37789e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.86798e+02    4.78211e+02   -1.06555e+02    1.36373e+03    1.25717e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.03455e+02    0.00000e+00    5.67767e-06
+
+Writing checkpoint, step 89894246 at Wed May  1 23:44:56 2024
+
+
+           Step           Time         Lambda
+       90000000    90000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12859e+03    3.59270e+01    6.72661e+01    3.07996e+02   -1.35632e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.67683e+02    4.60757e+02   -2.34653e+01    1.37286e+03    1.34940e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05488e+02    0.00000e+00    5.85016e-06
+
+Writing checkpoint, step 90438556 at Wed May  1 23:59:56 2024
+
+
+           Step           Time         Lambda
+       90500000    90500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13947e+03    3.31654e+01   -2.23011e+01    3.20810e+02   -1.38598e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.87561e+02    5.07256e+02   -9.51384e+01    1.29646e+03    1.20132e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88487e+02    0.00000e+00    5.47945e-06
+
+Writing checkpoint, step 90979575 at Thu May  2 00:14:56 2024
+
+
+           Step           Time         Lambda
+       91000000    91000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.09585e+03    3.85334e+01    5.06180e+01    3.11955e+02   -1.36520e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.92503e+02    4.76298e+02   -8.44501e+01    1.33168e+03    1.24723e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.96324e+02    0.00000e+00    5.56462e-06
+
+           Step           Time         Lambda
+       91500000    91500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.07211e+03    3.62476e+01   -1.41913e+00    3.14214e+02   -1.39439e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.10695e+02    5.04996e+02   -1.78931e+02    1.45402e+03    1.27509e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.23547e+02    0.00000e+00    6.19526e-06
+
+Writing checkpoint, step 91520246 at Thu May  2 00:29:56 2024
+
+
+           Step           Time         Lambda
+       92000000    92000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.19738e+03    3.27029e+01    1.35037e+01    3.19284e+02   -1.35230e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.84942e+02    4.32380e+02   -4.19893e+01    1.35332e+03    1.31133e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01139e+02    0.00000e+00    5.63485e-06
+
+Writing checkpoint, step 92056678 at Thu May  2 00:44:56 2024
+
+
+           Step           Time         Lambda
+       92500000    92500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.14075e+03    4.35797e+01    4.85599e+01    3.42827e+02   -1.36782e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.57521e+02    4.45123e+02   -1.04500e+02    1.31072e+03    1.20622e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.91660e+02    0.00000e+00    5.48565e-06
+
+Writing checkpoint, step 92592276 at Thu May  2 00:59:56 2024
+
+
+           Step           Time         Lambda
+       93000000    93000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08517e+03    4.42360e+01    1.56795e+01    3.10436e+02   -1.38039e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.52143e+02    4.85194e+02   -9.18212e+01    1.34089e+03    1.24907e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.98373e+02    0.00000e+00    5.81008e-06
+
+Writing checkpoint, step 93134959 at Thu May  2 01:14:56 2024
+
+
+           Step           Time         Lambda
+       93500000    93500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.06391e+03    5.62160e+01   -6.40007e+01    3.01414e+02   -1.41829e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.86256e+02    5.70704e+02   -1.76301e+02    1.29019e+03    1.11389e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.87093e+02    0.00000e+00    5.75349e-06
+
+Writing checkpoint, step 93679736 at Thu May  2 01:29:56 2024
+
+
+           Step           Time         Lambda
+       94000000    94000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12082e+03    3.63675e+01    4.10173e+00    2.91629e+02   -1.39061e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.02525e+02    5.44847e+02   -9.53691e+01    1.35179e+03    1.25642e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.00799e+02    0.00000e+00    5.68128e-06
+
+Writing checkpoint, step 94221842 at Thu May  2 01:44:56 2024
+
+
+           Step           Time         Lambda
+       94500000    94500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.20334e+03    3.99660e+01   -3.43398e+01    2.76676e+02   -1.38471e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.52956e+02    5.05163e+02   -1.46865e+02    1.43152e+03    1.28465e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.18540e+02    0.00000e+00    5.64500e-06
+
+Writing checkpoint, step 94766374 at Thu May  2 01:59:56 2024
+
+
+           Step           Time         Lambda
+       95000000    95000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13426e+03    3.64792e+01   -5.14186e+00    3.00383e+02   -1.37038e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.99749e+02    4.93518e+02   -1.10623e+02    1.37462e+03    1.26400e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.05879e+02    0.00000e+00    5.83678e-06
+
+Writing checkpoint, step 95307186 at Thu May  2 02:14:56 2024
+
+
+           Step           Time         Lambda
+       95500000    95500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.08082e+03    3.98599e+01   -1.15132e+01    3.23102e+02   -1.34851e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.21143e+02    4.41658e+02   -1.95727e+02    1.40893e+03    1.21320e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.13514e+02    0.00000e+00    5.57744e-06
+
+Writing checkpoint, step 95846275 at Thu May  2 02:29:56 2024
+
+
+           Step           Time         Lambda
+       96000000    96000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.18662e+03    5.11460e+01    2.24497e+01    2.93829e+02   -1.35402e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.20572e+02    4.30194e+02   -9.03571e+01    1.34772e+03    1.25736e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.99894e+02    0.00000e+00    5.53415e-06
+
+Writing checkpoint, step 96384515 at Thu May  2 02:44:56 2024
+
+
+           Step           Time         Lambda
+       96500000    96500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.04089e+03    2.76054e+01    8.64895e-01    3.27601e+02   -1.35891e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.18727e+02    4.57045e+02   -2.23633e+02    1.36934e+03    1.14570e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.04703e+02    0.00000e+00    5.56398e-06
+
+Writing checkpoint, step 96923483 at Thu May  2 02:59:56 2024
+
+
+           Step           Time         Lambda
+       97000000    97000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12722e+03    3.83673e+01    6.46813e+01    3.04337e+02   -1.33040e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.85618e+02    4.04641e+02   -7.67701e+01    1.38696e+03    1.31019e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.08625e+02    0.00000e+00    5.58642e-06
+
+Writing checkpoint, step 97461417 at Thu May  2 03:14:56 2024
+
+
+           Step           Time         Lambda
+       97500000    97500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.17298e+03    3.40629e+01    7.26746e+01    3.17504e+02   -1.33274e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.87349e+02    3.85938e+02   -3.69225e+01    1.34447e+03    1.30755e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.99171e+02    0.00000e+00    5.68935e-06
+
+           Step           Time         Lambda
+       98000000    98000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.15965e+03    3.26549e+01   -1.02367e+02    2.92874e+02   -1.41024e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.56130e+02    5.71673e+02   -2.11886e+02    1.33912e+03    1.12723e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.97980e+02    0.00000e+00    5.89259e-06
+
+Writing checkpoint, step 98002087 at Thu May  2 03:29:56 2024
+
+
+           Step           Time         Lambda
+       98500000    98500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12583e+03    4.64458e+01    7.15058e+01    3.28914e+02   -1.34369e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.42343e+02    4.19518e+02   -9.38159e+01    1.29851e+03    1.20470e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.88944e+02    0.00000e+00    5.84930e-06
+
+Writing checkpoint, step 98539581 at Thu May  2 03:44:56 2024
+
+
+           Step           Time         Lambda
+       99000000    99000.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.13149e+03    3.07722e+01    1.03248e+02    3.01797e+02   -1.30307e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.17241e+02    3.29994e+02   -1.23004e+02    1.31335e+03    1.19035e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    2.92247e+02    0.00000e+00    5.69694e-06
+
+Writing checkpoint, step 99075848 at Thu May  2 03:59:56 2024
+
+
+           Step           Time         Lambda
+       99500000    99500.00000        0.00000
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12286e+03    4.24921e+01   -4.12254e+01    3.00790e+02   -1.36999e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.62029e+02    4.71996e+02   -2.35111e+02    1.41571e+03    1.18059e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.15022e+02    0.00000e+00    5.33465e-06
+
+Writing checkpoint, step 99610488 at Thu May  2 04:14:56 2024
+
+
+           Step           Time         Lambda
+      100000000   100000.00000        0.00000
+
+Writing checkpoint, step 100000000 at Thu May  2 04:25:48 2024
+
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.11876e+03    4.69593e+01    9.92953e+00    3.03904e+02   -1.37196e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -7.32345e+02    4.65846e+02   -1.58903e+02    1.35516e+03    1.19626e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01549e+02    0.00000e+00    5.64308e-06
+
+	<======  ###############  ==>
+	<====  A V E R A G E S  ====>
+	<==  ###############  ======>
+
+	Statistics over 100000001 steps using 1000003 frames
+
+   Energies (kJ/mol)
+          Angle    Proper Dih. Ryckaert-Bell.          LJ-14     Coulomb-14
+    1.12811e+03    3.58050e+01    2.27479e+01    3.09738e+02   -1.35944e+03
+        LJ (SR)   Coulomb (SR)      Potential    Kinetic En.   Total Energy
+   -6.14081e+02    4.82438e+02    5.32172e+00    1.35581e+03    1.36113e+03
+    Temperature Pressure (bar)   Constr. rmsd
+    3.01694e+02    0.00000e+00    0.00000e+00
+
+   Total Virial (kJ/mol)
+    4.70102e+02   -1.23571e+01   -1.27933e+01
+   -1.23571e+01    4.37999e+02    4.58052e+00
+   -1.27933e+01    4.58053e+00    4.36416e+02
+
+   Pressure (bar)
+    0.00000e+00    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+    0.00000e+00    0.00000e+00    0.00000e+00
+
+
+	M E G A - F L O P S   A C C O U N T I N G
+
+ NB=Group-cutoff nonbonded kernels    NxN=N-by-N cluster Verlet kernels
+ RF=Reaction-Field  VdW=Van der Waals  QSTab=quadratic-spline table
+ W3=SPC/TIP3p  W4=TIP4p (single or pairs)
+ V&F=Potential and force  V=Potential only  F=Force only
+
+ Computing:                               M-Number         M-Flops  % Flops
+-----------------------------------------------------------------------------
+ NB Elec. [V&F]                       33846.218104       33846.218     0.0
+ NB Elec. [F]                       3217363.324150     3217363.324     0.8
+ NB VdW & Elec. [V&F]               3894859.221000     3894859.221     1.0
+ NB VdW & Elec. [F]               327727830.264304   327727830.264    82.6
+ 1,4 nonbonded interactions           99385.062600     8944655.634     2.3
+ NS-Pairs                             34746.883078      729684.545     0.2
+ CG-CoM                               38273.821980      114821.466     0.0
+ Angles                               71966.063060    12090298.594     3.0
+ Propers                               2114.575800      484237.858     0.1
+ RB-Dihedrals                         99244.090880    24513290.447     6.2
+ Virial                                 414.457680        7460.238     0.0
+ Update                               38273.821980     1186488.481     0.3
+ Stop-CM                                382.738980        3827.390     0.0
+ Calc-Ekin                            38273.821980     1033393.193     0.3
+ Lincs                                76406.672240     4584400.334     1.2
+ Lincs-Mat                          1727185.513440     6908742.054     1.7
+ Constraint-V                        152813.344480     1222506.756     0.3
+ Constraint-Vir                         382.034120        9168.819     0.0
+-----------------------------------------------------------------------------
+ Total                                               396706874.838   100.0
+-----------------------------------------------------------------------------
+
+
+     R E A L   C Y C L E   A N D   T I M E   A C C O U N T I N G
+
+On 1 MPI rank
+
+ Computing:          Num   Num      Call    Wall time         Giga-Cycles
+                     Ranks Threads  Count      (s)         total sum    %
+-----------------------------------------------------------------------------
+ Neighbor search        1    1   70485860   35000.820      87501.346  29.7
+ Force                  1    1   70485860   73975.471     184937.190  62.9
+ Write traj.            1    1        835       1.635          4.087   0.0
+ Update                 1    1  140971720    2043.565       5108.871   1.7
+ Constraints            1    1  140971720    6077.482      15193.582   5.2
+ Rest                                         553.627       1384.057   0.5
+-----------------------------------------------------------------------------
+ Total                                     117652.599     294129.133 100.0
+-----------------------------------------------------------------------------
+
+               Core t (s)   Wall t (s)        (%)
+       Time:   117765.091   117652.599      100.1
+                         1d08h40:52
+                 (ns/day)    (hour/ns)
+Performance:       51.762        0.464
+Finished mdrun on rank 0 Thu May  2 04:25:48 2024
