@@ -1,6 +1,7 @@
 # PCL_Supplementary_material_systematic_CG
 Supplementary material for a paper describing a bottom-up approach for poly(caprolactone).
-The material contains 
+
+The material contains: 
 
 -the simulation data on the poly(caprolactone) (PCL) chains of various molecular weight in vacuum (directory vacuum) and in water (directory solvated) in Gromacs format
 
@@ -17,5 +18,8 @@ The material contains
 -the foce field parameters in the Gromacs format (file pcl_ff_final.itp in vacuum and in solvated directory)
 
 -the comparison of the data obtained from the simulations in water with the data previously reported in literature (file supp_info.pdf)
+
+-a code for the calculation of the average value of the radius of gyration, with its corresponding error, from the polystat file created by Gromacs (file averages_rg.sh)
+
 
  
