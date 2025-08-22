@@ -1,0 +1,39 @@
+;
+;       User spoel (236)
+;       Wed Nov  3 17:12:44 1993
+;       Input file
+;
+title               =  Yo
+cpp                 =  /usr/bin/cpp
+integrator          =  sd
+dt                  =  0.001    ; ps !
+nsteps              =  100000000 ; total 10 ps.
+comm_mode = ANGULAR
+nstcomm             =  100
+nstxout             =  100000 
+nstvout             =  0
+nstfout             =  0
+nstlog              =  500000
+nstenergy           =  500000
+nstlist             =  1
+ns_type             =  grid
+vdw-type            = Cut-off
+coulombtype         = Cut-off
+rlist               =  2.0
+rcoulomb            =  2.0
+rvdw                =  2.0
+cutoff-scheme = group
+tc-grps             =  system
+tau_t               =  0.01
+ref_t               =  300
+; Energy monitoring
+DispCorr            =  No
+; Isotropic pressure coupling is now on
+Pcoupl              =  No
+; Generate velocites is off at 300 K.
+gen_vel             =  yes
+gen_temp            =  300.0
+ld_seed            =  399
+constraints         =  all-bonds
+constraint_algorithm = LINCS
+pbc = no
