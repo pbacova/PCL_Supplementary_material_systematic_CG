@@ -1,0 +1,14 @@
+; Include forcefield parameters
+#include "pcl_ff_final.itp"
+
+; Include chain topologies
+#include "100PCL_pairs.itp"
+#include "spc_water.itp"
+[ system ]
+; Name
+PCL solvated
+
+[ molecules ]
+; Compound        #mols
+100PCL              1
+SOL                10389
