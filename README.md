@@ -21,5 +21,7 @@ The material contains:
 
 -a code for the calculation of the average value of the radius of gyration, with its corresponding error, from the polystat file created by Gromacs (file averages_rg.sh)
 
+-data (literature data and simulation results) as well as the gnuplot code to recreate Fig. S1 in the supp_info.pdf file 
+
 
  
