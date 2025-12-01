@@ -23,5 +23,5 @@ The material contains:
 
 -data (literature data and simulation results) as well as the gnuplot code to recreate Fig. S1 in the supp_info.pdf file 
 
-
+Update: revised version of supp_info file (sup_info_revised.pdf). Two data sets were added to the comparison in Fig. S1, the corresponding citations were also added. The added data support the conclusions driven in the previous version of the file, and therefore, no other changes were made. 
  
